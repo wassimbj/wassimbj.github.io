@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+body {
+  /* font-family: 'Didact Gothic'; */
+  font-family: 'Source Code Pro';
+  margin: 0;
+  padding: 0;
+  background: #1f212b;
+  color: #BBBDC0;
+  overflow-x: hidden !important;
+  height: 100%;
+  scroll-behavior: smooth;
+  position: relative;
+}
