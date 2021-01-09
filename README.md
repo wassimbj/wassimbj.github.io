@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://wassimbj.github.io/mywebsite/">
-    Visit the website (github page)
+  <a href="https://wassimbj.github.io/">
+    Visit the website
   </a>
 </p>
