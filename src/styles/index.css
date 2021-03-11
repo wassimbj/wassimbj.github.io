@@ -47,98 +47,8 @@ header .list-inline .list-inline-item:hover{
   color: #ffffff;
 }
 
-.mobile-nav{display: none}
-
-/* @media (max-width: 500px)
-{
-  .desktop-nav{display: none}
-  .mobile-nav{display: block}
-
-} */
-
-.ham-icon > span{
-  background: #BBBDC0;
-  width: 35px;
-  height: 2px;
-  display: block;
-  border-radius: 30px;
-  -webkit-transition: 200ms;
-  transition: 200ms;
-}
-
-.ham-icon > span:not(:last-child)
-{
-  margin-bottom: 5px
-}
-
-.ham-icon > ._2{
-  width: 40px;
-}
-
 section{padding: 5rem 0}
 
-/* ----- Mobile nav ---- */
-
-.hamIsOpen > ._1{ -webkit-transform: translateY(7px) rotate(45deg); transform: translateY(7px) rotate(45deg) }
-.hamIsOpen > ._2{width: 0;}
-.hamIsOpen > ._3{ -webkit-transform: translateY(-7px) rotate(-45deg); transform: translateY(-7px) rotate(-45deg) }
-
-.mobile-dropdown{
-  z-index: -1;
-  top: 0;
-  background-color: #1f212b;
-  height: 100vh;
-}
-.mobile-dropdown .dropdown-items > span{
-  font-size: 45px;
-  text-align: center;
-  cursor: pointer;
-  padding-bottom: 3rem !important;
-}
-.mobile-dropdown .dropdown-items > span:hover{
- color: #fff;
-}
-
-/* ######## Banner ######## */
-.banner{
-  height: 100%;
-  padding-top: 13rem;
-}
-.banner .banner-title > h1{
-  font-size: 75px;
-  text-align: center;
-  color: #D4D4D4;
-}
-.banner .banner-title .myname{
-  color: #fff;
-}
-
-.banner .bannerBtns{margin-top: 6rem;}
-.banner .talkBtn{
-  background: rgba(255, 255, 255, 0.035);
-  color: rgba(255, 255, 255, 0.42);
-  padding: 10px 30px;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 50px;
-}
-
-.banner .talkBtn:hover{
-  background: rgba(255, 255, 255, 0.055);
-}
-
-@media (max-width: 765px)
-{
-    .banner{ padding-top: 8rem; height: unset}
-    .banner .banner-title > h1{font-size: 45px;}
-    .banner .bannerBtns{margin-top: 4rem;}
-
-}
-
-@media (max-width: 400px)
-{
-  .banner .banner-title > h1{font-size: 35px;}
-}
 /* ########## About ######### */
 
 .tinyTitle{
@@ -235,7 +145,6 @@ a{
 /* ######## Footer OR Contact ###### */
 .footer{
  position: relative;
- background: #1c1e27;
  padding-top: 0;
  padding-bottom: 0
 }
