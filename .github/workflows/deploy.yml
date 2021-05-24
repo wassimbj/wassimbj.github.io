@@ -12,5 +12,10 @@ jobs:
     - uses: actions/setup-node@master
       with:
        node-version: 12
+    - uses: oleksiyrudenko/gha-git-credentials@v2.1
+      with:
+        global: true
+        name: 'Wassim Ben Jdida'
+        email: 'wassimbenjdida@gmail.com'
     - run: npm ci
     - run: npm run deploy
