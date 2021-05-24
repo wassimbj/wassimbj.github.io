@@ -8,19 +8,25 @@ jobs:
   build_master:
    runs-on: ubuntu-latest
    steps:
-    - uses: actions/checkout@v2
+    - name: 'checkout'
+      uses: actions/checkout@v2
+#     - uses: oleksiyrudenko/gha-git-credentials@v2.1
+#       with:
+#         global: true
+#         name: 'Wassim Ben Jdida'
+#         email: 'wassimbenjdida@gmail.com'
+#         actor: ${{ github.actor }}
+#         token: ${{ github.token }}
+#     - uses: actions/setup-node@master
+#       with:
+#        node-version: 12
+    - name: Install and Build 🔧
+      run: |
+          npm install
+          npm run build
+    - uses: JamesIves/github-pages-deploy-action@4.1.3
       with:
-       ref: ${{ github.head_ref }}
-       token: ${{ github.token }}
-    - uses: oleksiyrudenko/gha-git-credentials@v2.1
-      with:
-        global: true
-        name: 'Wassim Ben Jdida'
-        email: 'wassimbenjdida@gmail.com'
-        actor: ${{ github.actor }}
-        token: ${{ github.token }}
-    - uses: actions/setup-node@master
-      with:
-       node-version: 12
-    - run: npm ci
-    - run: npm run deploy
+          branch: gitpage # The branch the action should deploy to.
+          folder: public # The folder the action should deploy.
+#     - run: npm ci
+#     - run: npm run deploy
