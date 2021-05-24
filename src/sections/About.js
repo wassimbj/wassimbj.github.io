@@ -9,7 +9,8 @@ export default class About extends Component {
             <div className="text-gray-400">
               <p>
                 Hey there, my name is Wassim im 20-years-old software developer from Tunisia,
-                i know there isn't much here, but if you want to say hi, look below;
+                I enjoy building stuff, expanding my knowledge, and drinking coffee.
+                i know there isn't much here, but if you want to say hi see below;
               </p>
             </div>
           </div>
