@@ -17,6 +17,9 @@ jobs:
     - uses: oleksiyrudenko/gha-git-credentials@v2.1
       with:
         global: true
+        name: 'Wassim Ben Jdida'
+        email: 'wassimbenjdida@gmail.com'
+        actor: ${{ github.actor }}
         token: ${{ github.token }}
     - run: npm ci
     - run: npm run deploy
