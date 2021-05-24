@@ -9,15 +9,14 @@ jobs:
    runs-on: ubuntu-latest
    steps:
     - uses: actions/checkout@v2
+      with:
+       ref: ${{ github.head_ref }}
     - uses: actions/setup-node@master
       with:
        node-version: 12
     - uses: oleksiyrudenko/gha-git-credentials@v2.1
       with:
         global: true
-        name: 'Wassim Ben Jdida'
-        email: 'wassimbenjdida@gmail.com'
-        actor: 'wassimbj'
-        token: '${{ secrets.GH_ACCESS_TOKEN }}'
+        token: ${{ github.token }}
     - run: npm ci
     - run: npm run deploy
