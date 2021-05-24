@@ -146,7 +146,7 @@ a{
 .footer{
  position: relative;
  padding-top: 0;
- padding-bottom: 0
+ padding-bottom: 3rem;
 }
 
 .footer .myEmail{
