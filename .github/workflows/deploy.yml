@@ -14,5 +14,5 @@ jobs:
        node-version: 12
     - run: npm ci
     - run: git config --global user.email "wassimbenjdida@gmail.com"
-    - run: git config --global user.name "wassim"
+    - run: git config --global user.name "wassimbj"
     - run: npm run deploy
