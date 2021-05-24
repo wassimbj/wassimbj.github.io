@@ -17,5 +17,7 @@ jobs:
         global: true
         name: 'Wassim Ben Jdida'
         email: 'wassimbenjdida@gmail.com'
+        actor: 'wassimbj'
+        token: '${{ secrets.GH_ACCESS_TOKEN }}'
     - run: npm ci
     - run: npm run deploy
