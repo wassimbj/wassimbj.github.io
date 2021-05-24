@@ -8,9 +8,10 @@ export default class About extends Component {
           <div className="text-center">
             <div className="text-gray-400">
               <p>
-                Hey there, my name is Wassim im 20-years-old software developer from Tunisia,
-                I enjoy building stuff, expanding my knowledge, and drinking coffee.
-                i know there isn't much here, but if you want to say hi see below;
+                Hey there 👋🏼, my name is Wassim im 20-years-old software developer from Tunisia,
+                I enjoy building stuff 👨‍💻, expanding my knowledge... 🚀, and drinking coffee ☕️.
+               <br/>
+                if you want to say hi, my email is down below.
               </p>
             </div>
           </div>
