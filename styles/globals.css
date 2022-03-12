@@ -5,5 +5,4 @@
 body {
   font-family: "Source Code Pro", monospace;
   @apply text-gray-300;
-  height: 3000px;
 }

@@ -1,22 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../src/components/Navbar";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-// import required modules
-import { Pagination, Navigation } from "swiper";
-
 import FeaturedProjectCard from "../src/components/FeaturedProjectCard";
-
-// import featuredProjects from "../src/meta/featured-projects.json";
+import { url } from "inspector";
 
 export default function Home() {
+  const navSections = [
+    { label: "About", href: "#about" },
+    { label: "Work", href: "#work" },
+    { label: "Blog", href: "https://dev.to/wassimbj" },
+    { label: "Contact", href: "#contact" },
+  ];
+
   return (
     <div>
       <Head>
@@ -27,6 +22,19 @@ export default function Home() {
 
       {/* ----- Nav ------ */}
       <Navbar />
+      {/* <header className="flex items-center justify-center py-3 px-2">
+        <nav className="flex items-center flex-wrap text-gray-400 space-x-5">
+          {navSections.map((item, i) => (
+            <a
+              key={i}
+              className="block hover:text-lightGreen md:text-lg text-base"
+              href={item.href}
+            >
+              --{item.label}
+            </a>
+          ))}
+        </nav>
+      </header> */}
       {/* ----- Nav ------ */}
 
       <main className="mx-auto max-w-5xl px-2">
@@ -35,7 +43,8 @@ export default function Home() {
             Wassim Ben Jdida
           </h1>
           <span className="block lg:text-3xl md:text-2xl text-xl font-semibold text-gray-200">
-            Developer, Entrepreneur and Tech lover
+            Developer <span className="text-white opacity-20">&&</span>{" "}
+            Entrepreneur
           </span>
           <p className="font-light max-w-2xl mt-10">
             I’m a software developer and an entrepreneur, I love learning new
@@ -48,56 +57,132 @@ export default function Home() {
             </a>{" "}
             with my best friend.
           </p>
-          <div className="flex items-center justify-center mt-2">
-            <Image
-              src="/vector1.svg"
-              width="100%"
-              height="200px"
-              alt=""
-              layout="fixed"
-            />
-          </div>
         </section>
-        <section id="work">
-          <span className="text-center block sm:text-3xl text-xl font-semibold text-lightGreen py-2">
-            Some things I’ve built
-          </span>
-          <div className="flex items-center justify-center">
-            <Image
-              src="/vector2.svg"
-              width="100%"
-              height="100%"
-              alt=""
-              layout="fixed"
-            />
+        <section id="work" className="mt-40">
+          <div className="block sm:text-3xl mb-5 text-xl font-semibold text-lightGreen py-2">
+            <span className="text-lightGreen opacity-30">~$ ls</span> /Some
+            things I’ve built
           </div>
 
-          {/*  className="max-w-3xl md:-mt-16 mt-0" */}
-          <div role="main" className="md:-mt-10 mt-0 cursor-grab">
-            <Swiper
-              spaceBetween={5}
-              slidesPerView={1}
-              pagination={{
-                clickable: true,
-              }}
-              navigation={true}
-              modules={[Pagination, Navigation]}
-              // onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
-            >
-              <SwiperSlide>
-                <FeaturedProjectCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <FeaturedProjectCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <FeaturedProjectCard />
-              </SwiperSlide>
-              {/* <SwiperSlide>Slide 2</SwiperSlide>
-              <SwiperSlide>Slide 3</SwiperSlide>
-              <SwiperSlide>Slide 4</SwiperSlide> */}
-            </Swiper>
+          {/*  className="md:-mt-10 mt-0 cursor-grab" */}
+          <div role="main" className="space-y-5">
+            <FeaturedProjectCard />
+            <FeaturedProjectCard reverse />
+          </div>
+        </section>
+
+        <section id="work" className="mt-40">
+          <div className="block sm:text-3xl mb-5 text-xl font-semibold text-lightGreen py-2">
+            <span className="text-lightGreen opacity-30">~$ ls </span>{" "}
+            /Noteworthy projects
+          </div>
+
+          {/*  className="md:-mt-10 mt-0 cursor-grab" */}
+          <div role="main" className="space-y-5">
+            <div className="grid gap-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+              <div className="bg-[#0a3d4b] rounded-md p-4">
+                <div className="flex items-center justify-end space-x-3">
+                  <a
+                    href="#somewhere"
+                    className="block bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M6.89 9c.98.49 1.82 1.23 2.43 2.15.35.52.35 1.19 0 1.71-.61.91-1.45 1.65-2.43 2.14M13 15h4"
+                        // stroke="#FF8A65"
+                        className="stroke-lightGreen"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      ></path>
+                      <path
+                        d="M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z"
+                        // stroke="#FF8A65"
+                        className="stroke-lightGreen"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      ></path>
+                    </svg>
+                  </a>
+                  <a
+                    href="#somewhere"
+                    className="block bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        // stroke="#FF8A65"
+                        className="stroke-lightGreen"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        d="M13 11l8.2-8.2M22 6.8V2h-4.8M11 2H9C4 2 2 4 2 9v6c0 5 2 7 7 7h6c5 0 7-2 7-7v-2"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+                <span className="font-semibold text-xl mt-5 mb-4 text-white block">
+                  Save useful links for later.
+                </span>
+                <p>lnk, is a CLI tool for saving useful links</p>
+                <div className="flex items-center mt-6">
+                  <Image
+                    src="/langs-icons/GoLang.svg"
+                    width="30px"
+                    height="30px"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="mt-40 pb-10">
+          <div className="block sm:text-3xl mb-5 text-xl font-semibold text-lightGreen py-2">
+            <span className="text-lightGreen opacity-30">~$ cat </span> /Contact.me
+          </div>
+          <p className="max-w-lg">
+            My inbox is always open. Whether you have a question or just want to
+            say hi, I’ll try my best to get back to you.
+          </p>
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-10 mt-10">
+            <a href="#" className="block">
+              <div>
+                <span className="block text-lightGreen font-semibold text-xl">
+                  Github
+                </span>
+                <p className="text-white"> Mostly coding at the morning </p>
+              </div>
+            </a>
+            <a href="#" className="block">
+              <div>
+                <span className="block text-lightGreen font-semibold text-xl">
+                  Linkedin
+                </span>
+                <p className="text-white"> Let&apos;s connect ! </p>
+              </div>
+            </a>
+            <a href="mailto:wassimbenjdida@gmail.com" className="block">
+              <div>
+                <span className="block text-lightGreen font-semibold text-xl">
+                  Email
+                </span>
+                <p className="text-white"> wassimbenjdida@gmail.com </p>
+              </div>
+            </a>
           </div>
         </section>
       </main>

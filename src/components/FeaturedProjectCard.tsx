@@ -1,12 +1,19 @@
 import Image from "next/image";
 import React from "react";
 
-export default function FeaturedProjectCard() {
+interface Props {
+  reverse?: boolean;
+}
+export default function FeaturedProjectCard({ reverse }: Props) {
   return (
-    <div className="p-2 max-w-3xl mx-auto">
-      <div className="flex items-center justify-center md:flex-nowrap flex-wrap">
+    <div className={`p-2 max-w-3xl ${reverse && "ml-auto"}`}>
+      <div
+        className={`flex items-center justify-center md:flex-nowrap flex-wrap ${
+          reverse && "flex-row-reverse"
+        }`}
+      >
         <div className="border-2 border-lightGreen rounded-full p-1">
-          <div className="w-60 h-60 rounded-full relative overflow-hidden">
+          <div className="w-52 h-52 rounded-full relative overflow-hidden">
             <span className="absolute left-0 top-0 w-full h-full bg-lightGreen bg-opacity-30 z-10"></span>
             <Image
               layout="fill"
@@ -16,8 +23,9 @@ export default function FeaturedProjectCard() {
             />
           </div>
         </div>
+
         {/* ----------------------- */}
-        <div className="md:ml-5 ml-0">
+        <div className={`${reverse ? "md:mr-5 mr-0" : "md:ml-5 ml-0"}`}>
           <span className="text-3xl mb-3 block md:text-left text-center text-white font-semibold">
             Beamaan
           </span>
@@ -25,46 +33,100 @@ export default function FeaturedProjectCard() {
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout.
           </p>
-          <div className="flex items-center space-x-4 mt-5">
-            <div>
-              <Image
-                src="/langs-icons/GoLang.svg"
-                alt=""
-                height="30px"
-                width="30px"
-              />
+          <div className="flex items-center justify-between mt-5">
+            <div className="flex items-center space-x-2">
+              <div>
+                <Image
+                  src="/langs-icons/GoLang.svg"
+                  alt=""
+                  height="30px"
+                  width="30px"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/langs-icons/PostgreSQL-Light.svg"
+                  alt=""
+                  height="30px"
+                  width="30px"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/langs-icons/NextJs-Light.svg"
+                  alt=""
+                  height="30px"
+                  width="30px"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/langs-icons/TypeScript.svg"
+                  alt=""
+                  height="30px"
+                  width="30px"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/langs-icons/Redis-Light.svg"
+                  alt=""
+                  height="30px"
+                  width="30px"
+                />
+              </div>
             </div>
-            <div>
-              <Image
-                src="/langs-icons/PostgreSQL-Light.svg"
-                alt=""
-                height="30px"
-                width="30px"
-              />
-            </div>
-            <div>
-              <Image
-                src="/langs-icons/NextJs-Light.svg"
-                alt=""
-                height="30px"
-                width="30px"
-              />
-            </div>
-            <div>
-              <Image
-                src="/langs-icons/TypeScript.svg"
-                alt=""
-                height="30px"
-                width="30px"
-              />
-            </div>
-            <div>
-              <Image
-                src="/langs-icons/Redis-Light.svg"
-                alt=""
-                height="30px"
-                width="30px"
-              />
+            <div className="space-x-3 flex items-center">
+              <a
+                href="#somewhere"
+                className="block bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6.89 9c.98.49 1.82 1.23 2.43 2.15.35.52.35 1.19 0 1.71-.61.91-1.45 1.65-2.43 2.14M13 15h4"
+                    // stroke="#FF8A65"
+                    className="stroke-lightGreen"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                  <path
+                    d="M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z"
+                    // stroke="#FF8A65"
+                    className="stroke-lightGreen"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="#somewhere"
+                className="block bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    // stroke="#FF8A65"
+                    className="stroke-lightGreen"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.5"
+                    d="M13 11l8.2-8.2M22 6.8V2h-4.8M11 2H9C4 2 2 4 2 9v6c0 5 2 7 7 7h6c5 0 7-2 7-7v-2"
+                  ></path>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
