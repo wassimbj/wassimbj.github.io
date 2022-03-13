@@ -1,0 +1,50 @@
+[
+  {
+    "image": "https://mobirise.com/assets52/images/poster.png",
+    "title": "Beamaan",
+    "subtitle": "Co-Founder && SWE",
+    "demo": "https://beamaan.com",
+    "code": "",
+    "description": "an escrow payment platform, built to protect people that buys and sells online from fraud, I'm now focused on making it ready asap. ",
+    "builtWith": [
+      { "name": "Go", "img": "GoLang.svg" },
+      { "name": "Postgres", "img": "PostgreSQL-Light.svg" },
+      { "name": "Next.js", "img": "NextJs-Light.svg" },
+      { "name": "TypeScript", "img": "TypeScript.svg" },
+      { "name": "Docker", "img": "Docker.svg" },
+      { "name": "Redis", "img": "Redis-Light.svg" }
+    ]
+  },
+  {
+    "image": "https://mobirise.com/assets52/images/poster.png",
+    "title": "Tsaol",
+    "subtitle": "Co-Founder && SWE",
+    "demo": "https://tsaol.net",
+    "code": "",
+    "description": "tsaol is a question and answer platform, users can ask, answer each other questions, like questions to get them up in rank, get badges and learn together.",
+    "builtWith": [
+      { "name": "Node.js", "img": "NodeJS-Dark.svg" },
+      { "name": "MySQL", "img": "MySQL-Light.svg" },
+      { "name": "React.js", "img": "React-Dark.svg" },
+      { "name": "Javascript", "img": "JavaScript.svg" },
+      { "name": "Docker", "img": "Docker.svg" },
+      { "name": "Redis", "img": "Redis-Light.svg" }
+    ]
+  },
+  {
+    "image": "https://mobirise.com/assets52/images/poster.png",
+    "title": "Trasty",
+    "subtitle": "Software Developer",
+    "demo": "",
+    "code": "https://github.com/wassimbj/trasty",
+    "description": "trasty is a p2p crowd shipping platform, it was a startup idea I had actually, users can post what they want to buy from abroad and anyone coming to their city can bring it with him, it has an internal chat and notification systems.",
+    "builtWith": [
+      { "name": "Node.js", "img": "NodeJS-Dark.svg" },
+      { "name": "PostgreSQL", "img": "PostgreSQL-Light.svg" },
+      { "name": "React.js", "img": "React-Dark.svg" },
+      { "name": "Javascript", "img": "JavaScript.svg" },
+      { "name": "Docker", "img": "Docker.svg" },
+      { "name": "Redis", "img": "Redis-Light.svg" }
+    ]
+  }
+]

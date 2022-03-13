@@ -1,16 +1,31 @@
 import Head from "next/head";
 import Image from "next/image";
-import Navbar from "../src/components/Navbar";
-import FeaturedProjectCard from "../src/components/FeaturedProjectCard";
-import { url } from "inspector";
+import Navbar from "../components/Navbar";
+import FeaturedProjectCard from "../components/FeaturedProjectCard";
+import { useEffect, useState } from "react";
+import NoteWorthyProjectCard from "../components/NoteWorthyProjectCard";
+import featuredProjects from "../meta/featured-projects.json";
+import noteWorthyProjects from "../meta/noteworthy-projects.json";
 
 export default function Home() {
-  const navSections = [
-    { label: "About", href: "#about" },
-    { label: "Work", href: "#work" },
-    { label: "Blog", href: "https://dev.to/wassimbj" },
-    { label: "Contact", href: "#contact" },
-  ];
+  const [page, setPage] = useState({
+    height: 0,
+    width: 0,
+  });
+
+  useEffect(() => {
+    setPage({
+      height: Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.body.clientHeight,
+        document.documentElement.clientHeight
+      ),
+      width: window.innerWidth,
+    });
+  }, []);
 
   return (
     <div>
@@ -22,20 +37,17 @@ export default function Home() {
 
       {/* ----- Nav ------ */}
       <Navbar />
-      {/* <header className="flex items-center justify-center py-3 px-2">
-        <nav className="flex items-center flex-wrap text-gray-400 space-x-5">
-          {navSections.map((item, i) => (
-            <a
-              key={i}
-              className="block hover:text-lightGreen md:text-lg text-base"
-              href={item.href}
-            >
-              --{item.label}
-            </a>
-          ))}
-        </nav>
-      </header> */}
       {/* ----- Nav ------ */}
+
+      <div className="absolute -top-2 left-0 right-0 bottom-0 -z-10 opacity-25">
+        <Image
+          src={page.width > 1200 ? "/vector.svg" : "/vector11.svg"}
+          width={page.width}
+          height={page.height}
+          layout="fixed"
+          alt=""
+        />
+      </div>
 
       <main className="mx-auto max-w-5xl px-2">
         <section id="about" className="mt-20">
@@ -60,124 +72,101 @@ export default function Home() {
         </section>
         <section id="work" className="mt-40">
           <div className="block sm:text-3xl mb-5 text-xl font-semibold text-lightGreen py-2">
-            <span className="text-lightGreen opacity-30">~$ ls</span> /Some
-            things I’ve built
+            <span className="text-lightGreen opacity-30 ">~$ ls</span>{" "}
+            <span className="bg-lightGreen text-darkGreen">
+              /Selected works
+            </span>
+            {/* /Selected works */}
           </div>
 
           {/*  className="md:-mt-10 mt-0 cursor-grab" */}
           <div role="main" className="space-y-5">
-            <FeaturedProjectCard />
-            <FeaturedProjectCard reverse />
+            {featuredProjects.map((project, i) => (
+              <FeaturedProjectCard
+                title={project.title}
+                builtWith={project.builtWith}
+                code={project.code}
+                demo={project.demo}
+                description={project.description}
+                image={project.image}
+                subtitle={project.subtitle}
+                key={i}
+                reverse={i % 2 != 0}
+              />
+            ))}
           </div>
         </section>
 
         <section id="work" className="mt-40">
           <div className="block sm:text-3xl mb-5 text-xl font-semibold text-lightGreen py-2">
             <span className="text-lightGreen opacity-30">~$ ls </span>{" "}
-            /Noteworthy projects
+            <span className="bg-lightGreen text-darkGreen">
+              /Noteworthy projects
+            </span>
+            {/* /Noteworthy projects */}
           </div>
 
           {/*  className="md:-mt-10 mt-0 cursor-grab" */}
           <div role="main" className="space-y-5">
             <div className="grid gap-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
-              <div className="bg-[#0a3d4b] rounded-md p-4">
-                <div className="flex items-center justify-end space-x-3">
-                  <a
-                    href="#somewhere"
-                    className="block bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="22"
-                      height="22"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M6.89 9c.98.49 1.82 1.23 2.43 2.15.35.52.35 1.19 0 1.71-.61.91-1.45 1.65-2.43 2.14M13 15h4"
-                        // stroke="#FF8A65"
-                        className="stroke-lightGreen"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                      <path
-                        d="M9 22h6c5 0 7-2 7-7V9c0-5-2-7-7-7H9C4 2 2 4 2 9v6c0 5 2 7 7 7Z"
-                        // stroke="#FF8A65"
-                        className="stroke-lightGreen"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="#somewhere"
-                    className="block bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="22"
-                      height="22"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        // stroke="#FF8A65"
-                        className="stroke-lightGreen"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1.5"
-                        d="M13 11l8.2-8.2M22 6.8V2h-4.8M11 2H9C4 2 2 4 2 9v6c0 5 2 7 7 7h6c5 0 7-2 7-7v-2"
-                      ></path>
-                    </svg>
-                  </a>
-                </div>
-                <span className="font-semibold text-xl mt-5 mb-4 text-white block">
-                  Save useful links for later.
-                </span>
-                <p>lnk, is a CLI tool for saving useful links</p>
-                <div className="flex items-center mt-6">
-                  <Image
-                    src="/langs-icons/GoLang.svg"
-                    width="30px"
-                    height="30px"
-                    alt=""
-                  />
-                </div>
-              </div>
+              {noteWorthyProjects.map((project, i) => (
+                <NoteWorthyProjectCard
+                  key={i}
+                  builtWith={project.builtWith}
+                  code={project.code}
+                  demo={project.demo}
+                  description={project.description}
+                  title={project.title}
+                />
+              ))}
             </div>
           </div>
         </section>
 
         <section id="contact" className="mt-40 pb-10">
           <div className="block sm:text-3xl mb-5 text-xl font-semibold text-lightGreen py-2">
-            <span className="text-lightGreen opacity-30">~$ cat </span> /Contact.me
+            <span className="text-lightGreen opacity-30">~$ cat </span>{" "}
+            <span className="bg-lightGreen text-darkGreen">/Contact.me</span>
           </div>
           <p className="max-w-lg">
             My inbox is always open. Whether you have a question or just want to
             say hi, I’ll try my best to get back to you.
           </p>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-10 mt-10">
-            <a href="#" className="block">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://github.com/wassimbj"
+              className="block"
+            >
               <div>
-                <span className="block text-lightGreen font-semibold text-xl">
+                <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
                   Github
                 </span>
                 <p className="text-white"> Mostly coding at the morning </p>
               </div>
             </a>
-            <a href="#" className="block">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://linkedin.com/in/wassimbenjdida"
+              className="block"
+            >
               <div>
-                <span className="block text-lightGreen font-semibold text-xl">
+                <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
                   Linkedin
                 </span>
                 <p className="text-white"> Let&apos;s connect ! </p>
               </div>
             </a>
-            <a href="mailto:wassimbenjdida@gmail.com" className="block">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="mailto:wassimbenjdida@gmail.com"
+              className="block"
+            >
               <div>
-                <span className="block text-lightGreen font-semibold text-xl">
+                <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
                   Email
                 </span>
                 <p className="text-white"> wassimbenjdida@gmail.com </p>
@@ -186,6 +175,16 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <footer className="mt-24 bg-[#0a3d4b] -5 py-3">
+        <div className="text-center text-sm">
+          <span> wassim ben jdida </span>
+          <span> ©{new Date().getFullYear()} </span>
+          <span className="mt-2 block text-center text-xs">
+            Designed with ☕ by me, even that curly line 😁
+          </span>
+        </div>
+      </footer>
     </div>
   );
 }

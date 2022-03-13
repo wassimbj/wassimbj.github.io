@@ -4,5 +4,5 @@
 
 body {
   font-family: "Source Code Pro", monospace;
-  @apply text-gray-300;
+  @apply text-gray-300 relative overflow-x-hidden;
 }
