@@ -176,12 +176,11 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="mt-24 bg-[#0a3d4b] -5 py-3">
-        <div className="text-center text-sm">
-          <span> wassim ben jdida </span>
-          <span> ©{new Date().getFullYear()} </span>
-          <span className="mt-2 block text-center text-xs">
-            Designed with ☕ by me, even that curly line 😁
+      <footer className="mt-24 bg-[#0a3d4b] px-3s py-3">
+        <div className="flex items-center justify-around md:flex-row flex-col text-xs">
+          <span> wassim ben jdida ©{new Date().getFullYear()} </span>
+          <span>
+            Designed with ☕ by me
           </span>
         </div>
       </footer>
