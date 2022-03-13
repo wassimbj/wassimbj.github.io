@@ -9,7 +9,7 @@
     "builtWith": [
       { "name": "Go", "img": "GoLang.svg" },
       { "name": "Postgres", "img": "PostgreSQL-Light.svg" },
-      { "name": "Next.js", "img": "NextJs-Light.svg" },
+      { "name": "Next.js", "img": "NextJS-Light.svg" },
       { "name": "TypeScript", "img": "TypeScript.svg" },
       { "name": "Docker", "img": "Docker.svg" },
       { "name": "Redis", "img": "Redis-Light.svg" }
