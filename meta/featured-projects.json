@@ -21,7 +21,7 @@
     "image": "/tsaol-img.png",
     "demo": "https://tsaol.net",
     "code": "",
-    "description": "tsaol is a question and answer platform, users can ask, answer each other questions, like questions to get them up in rank, get badges and learn together.",
+    "description": "tsaol is a question and answer platform, users can ask, answer each other questions, like answers to get them up in rank, get badges and learn together.",
     "builtWith": [
       { "name": "Node.js", "img": "NodeJS-Dark.svg" },
       { "name": "MySQL", "img": "MySQL-Light.svg" },
