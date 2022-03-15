@@ -143,7 +143,7 @@ export default function Home() {
                 <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
                   Github
                 </span>
-                <p className="text-white"> I'm an "early-bird" </p>
+                <p className="text-white">I&apos;m an &quot;early-bird&quot;</p>
               </div>
             </a>
             <a
@@ -179,9 +179,7 @@ export default function Home() {
       <footer className="mt-24 bg-[#0a3d4b] px-3s py-3">
         <div className="flex items-center justify-around md:flex-row flex-col text-xs">
           <span> wassim ben jdida ©{new Date().getFullYear()} </span>
-          <span>
-            Designed with ☕ by me
-          </span>
+          <span>Designed with ☕ by me</span>
         </div>
       </footer>
     </div>
