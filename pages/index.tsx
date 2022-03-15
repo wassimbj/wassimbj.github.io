@@ -143,7 +143,7 @@ export default function Home() {
                 <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
                   Github
                 </span>
-                <p className="text-white"> Mostly coding at the morning </p>
+                <p className="text-white"> I'm an "early-bird" </p>
               </div>
             </a>
             <a
