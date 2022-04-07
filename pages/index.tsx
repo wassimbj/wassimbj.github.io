@@ -62,7 +62,7 @@ export default function Home() {
             I’m a software developer and an entrepreneur, I love learning new
             things, currently I’m focused on learning about AWS, and building{" "}
             <a
-              href="https://beamaan.com"
+              href="https://www.beamaan.com"
               className="text-lightGreen border-b border-lightGreen border-opacity-50 hover:border-opacity-100"
             >
               beamaan.com
