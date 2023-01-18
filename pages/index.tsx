@@ -39,7 +39,7 @@ export default function Home() {
       <Navbar />
       {/* ----- Nav ------ */}
 
-      <div className="absolute -top-2 left-0 right-0 bottom-0 -z-10 opacity-25">
+      <div className="xl:block hidden absolute -top-2 left-0 right-0 bottom-0 -z-10 opacity-25">
         <Image
           src={page.width > 1200 ? "/vector.svg" : "/vector11.svg"}
           width={page.width}
