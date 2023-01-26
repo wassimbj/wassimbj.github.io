@@ -55,19 +55,21 @@ export default function Home() {
             Wassim Ben Jdida
           </h1>
           <span className="block lg:text-3xl md:text-2xl text-xl font-semibold text-gray-200">
-            Developer <span className="text-white opacity-20">&&</span>{" "}
-            Entrepreneur
+            Software Developer
           </span>
           <p className="font-light max-w-2xl mt-10">
-            I’m a software developer and an entrepreneur, I love learning new
-            things, currently I’m focused on learning about AWS, and building{" "}
+            A software developer based in{" "}
             <a
-              href="https://www.beamaan.com"
-              className="text-lightGreen border-b border-lightGreen border-opacity-50 hover:border-opacity-100"
+              href="https://en.wikipedia.org/wiki/Sousse"
+              rel="noreferrer"
+              target={"_blank"}
+              className="inline-block text-lightGreen border-b border-lightGreen opacity-70 hover:opacity-100 cursor-help"
             >
-              beamaan.com
-            </a>{" "}
-            with my best friend.
+              Tunisia
+            </a>
+            , passionate about building software that solves real-world
+            problems. I love to learn new things and share my knowledge with
+            others
           </p>
         </section>
         <section id="work" className="mt-40">
