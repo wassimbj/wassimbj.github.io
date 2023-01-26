@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Navbar() {
   const navSections = [
-    { label: "About", href: "#about" },
+    // { label: "About", href: "#about" },
     { label: "Work", href: "#work" },
-    { label: "Blog", href: "https://dev.to/wassimbj" },
+    { label: "Blog", href: "https://dev.to/wassimbj", newWindow: true },
     { label: "Contact", href: "#contact" },
   ];
   return (
@@ -14,6 +14,8 @@ export default function Navbar() {
           <a
             key={i}
             className="block hover:text-lightGreen md:text-lg text-base"
+            target={item.newWindow ? "_blank" : "_self"}
+            rel="noreferrer"
             href={item.href}
           >
             --{item.label}
