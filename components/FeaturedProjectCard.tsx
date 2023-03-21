@@ -24,12 +24,12 @@ export default function FeaturedProjectCard({
   return (
     <div className={`p-2 max-w-3xl ${reverse && "ml-auto"}`}>
       <div
-        className={`flex items-center justify-center md:flex-nowrap flex-wrap ${
+        className={`flex items-start justify-center md:flex-nowrap flex-wrap ${
           reverse && "flex-row-reverse"
         }`}
       >
-        <div className="border-2 border-lightGreen rounded-full p-1">
-          <div className="md:w-52 md:h-52 w-44 h-44 rounded-full relative overflow-hidden">
+        <div className="border border-lightGreen/70 rounded-full p-0.5">
+          <a href={demo || code} target="_blank" rel="noreferrer" className="block hover:opacity-70 transition-opacity w-44 h-44 rounded-full relative overflow-hidden">
             <span className="absolute left-0 top-0 w-full h-full bg-lightGreen bg-opacity-30 z-10"></span>
             <Image
               layout="fill"
@@ -37,7 +37,7 @@ export default function FeaturedProjectCard({
               src={image}
               alt=""
             />
-          </div>
+          </a>
         </div>
 
         {/* ----------------------- */}

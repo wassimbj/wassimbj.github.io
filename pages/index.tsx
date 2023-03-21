@@ -39,15 +39,16 @@ export default function Home() {
       <Navbar />
       {/* ----- Nav ------ */}
 
-      <div className="xl:block hidden absolute -top-2 left-0 right-0 bottom-0 -z-10 opacity-25">
+      {/* <div className="xl:block hidden absolute -top-2 left-0 right-0 bottom-0 -z-10 opacity-25">
         <Image
           src={page.width > 1200 ? "/vector.svg" : "/vector11.svg"}
           width={page.width}
+          className="opacity-40"
           height={page.height}
           layout="fixed"
           alt=""
         />
-      </div>
+      </div> */}
 
       <main className="mx-auto max-w-5xl px-2">
         <section id="about" className="mt-20">
@@ -91,7 +92,7 @@ export default function Home() {
                 image={project.image}
                 subtitle={project.subtitle}
                 key={i}
-                reverse={i % 2 != 0}
+                // reverse={i % 2 != 0}
               />
             ))}
           </div>

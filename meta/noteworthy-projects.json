@@ -8,7 +8,7 @@
   },
   {
     "title": "Time slot picker.",
-    "description": "smooth, fully responsive and multi-language time slot picker reactjs component, that is used by 3 projects by now.",
+    "description": "smooth, fully responsive and multi-language time slot picker reactjs component, that is used by 5+ projects by now.",
     "demo": "https://rc-slotpicker.netlify.app",
     "code": "https://github.com/wassimbj/slotpicker",
     "builtWith": [

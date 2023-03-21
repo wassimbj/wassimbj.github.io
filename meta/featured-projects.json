@@ -32,6 +32,15 @@
     ]
   },
   {
+    "title": "Clever Snake Game",
+    "subtitle": "Software Developer",
+    "image": "/cleversnake-img.png",
+    "demo": "https://clever-snake-game.vercel.app/",
+    "code": "https://github.com/wassimbj/cleverSnakeGame",
+    "description": "Clever snake is a web-based game, its so tricky and fun, it contains only 5 levels for now, i will be adding more so soon, the UI kinda sucks but it will get improved so soon, i'm working on it.",
+    "builtWith": [{ "name": "Javascript", "img": "JavaScript.svg" }]
+  },
+  {
     "title": "Trasty",
     "subtitle": "Software Developer",
     "image": "/trasty-img.png",
