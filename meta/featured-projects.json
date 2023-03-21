@@ -5,7 +5,7 @@
     "image": "/beamaan-img.webp",
     "demo": "https://www.beamaan.com",
     "code": "",
-    "description": "an escrow payment platform, built to protect people that buys and sells online from fraud, I'm now focused on making it ready asap. ",
+    "description": "an escrow payment platform, built to protect people that buys and sells online from fraud.",
     "builtWith": [
       { "name": "Go", "img": "GoLang.svg" },
       { "name": "Postgres", "img": "PostgreSQL-Light.svg" },
