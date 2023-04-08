@@ -82,7 +82,7 @@ export default function NoteWorthyProjectCard({
         <span className="mt-2 mb-4 font-semibold text-lg text-white inline">
           {title}
         </span>
-        <p className="text-sm mb-8">{description}</p>
+        <p className="text-sm mb-8 font-light">{description}</p>
       </div>
 
       <div className="absolute bottom-2 left-2">

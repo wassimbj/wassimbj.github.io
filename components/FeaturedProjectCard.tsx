@@ -117,7 +117,7 @@ export default function FeaturedProjectCard({
               {subtitle}
             </span>
           </div>
-          <p className="md:text-base text-sm">{description}</p>
+          <p className="md:text-base font-light text-sm">{description}</p>
           <div className="flex items-center space-x-2 mt-5">
             {builtWith.map((item, i) => (
               <div key={i} title={item.name}>

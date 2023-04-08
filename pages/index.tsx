@@ -120,7 +120,7 @@ export default function Home() {
             <span className="text-lightGreen opacity-30">~$ cat </span>{" "}
             <span className="bg-lightGreen text-darkGreen">/Contact.me</span>
           </div>
-          <p className="max-w-lg">
+          <p className="max-w-lg font-light">
             My inbox is always open. Whether you have a question or just want to
             say hi, I’ll try my best to get back to you.
           </p>

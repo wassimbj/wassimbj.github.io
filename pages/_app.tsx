@@ -1,10 +1,14 @@
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { Source_Code_Pro } from "next/font/google";
+const sourceCodeProFont = Source_Code_Pro({ subsets: ["latin"] });
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Component {...pageProps} />
+      <main className={sourceCodeProFont.className}>
+        <Component {...pageProps} />
+      </main>
       <Analytics />
     </>
   );
