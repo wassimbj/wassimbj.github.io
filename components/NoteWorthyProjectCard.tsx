@@ -18,18 +18,18 @@ export default function NoteWorthyProjectCard({
 }: Props) {
   return (
     <div className="bg-[#0a3d4b] rounded-md p-4 relative">
-      <div className="flex items-center justify-end space-x-3">
+      <div className="flex items-center space-x-3">
         {code && (
           <a
             rel="noreferrer"
             target="_blank"
             href={code}
-            className="block bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20"
+            className="block transition-colors bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
+              width="15"
+              height="15"
               viewBox="0 0 24 24"
               fill="none"
             >
@@ -57,12 +57,12 @@ export default function NoteWorthyProjectCard({
             rel="noreferrer"
             target="_blank"
             href={demo}
-            className="block bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20"
+            className="block transition-colors bg-white bg-opacity-10 p-2 rounded-full hover:bg-opacity-20"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
+              width="15"
+              height="15"
               viewBox="0 0 24 24"
               fill="none"
             >
@@ -79,14 +79,11 @@ export default function NoteWorthyProjectCard({
         )}
       </div>
       <div className="flex flex-col flex-none">
-        <span className="font-semibold text-xl mt-5 mb-4 text-white block">
+        <span className="mt-2 mb-4 font-semibold text-lg text-white inline">
           {title}
         </span>
-        <p className="flex-grow">{description}</p>
+        <p className="text-sm mb-8">{description}</p>
       </div>
-
-      <br />
-      <br />
 
       <div className="absolute bottom-2 left-2">
         <div className="flex items-center space-x-2 self-end">
@@ -95,8 +92,8 @@ export default function NoteWorthyProjectCard({
               <Image
                 src={`/langs-icons/${item.img}`}
                 alt=""
-                height="25px"
-                width="25px"
+                height={22}
+                width={22}
               />
             </div>
           ))}

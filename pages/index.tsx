@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 import NoteWorthyProjectCard from "../components/NoteWorthyProjectCard";
 import featuredProjects from "../meta/featured-projects.json";
 import noteWorthyProjects from "../meta/noteworthy-projects.json";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export default function Home() {
   const [page, setPage] = useState({
     height: 0,
     width: 0,
   });
+  const myEmail = "wassimbenjdida@gmail.com";
 
   useEffect(() => {
     setPage({
@@ -38,17 +40,6 @@ export default function Home() {
       {/* ----- Nav ------ */}
       <Navbar />
       {/* ----- Nav ------ */}
-
-      {/* <div className="xl:block hidden absolute -top-2 left-0 right-0 bottom-0 -z-10 opacity-25">
-        <Image
-          src={page.width > 1200 ? "/vector.svg" : "/vector11.svg"}
-          width={page.width}
-          className="opacity-40"
-          height={page.height}
-          layout="fixed"
-          alt=""
-        />
-      </div> */}
 
       <main className="mx-auto max-w-5xl px-2">
         <section id="about" className="mt-20">
@@ -79,7 +70,6 @@ export default function Home() {
             <span className="bg-lightGreen text-darkGreen">
               /Selected works
             </span>
-            {/* /Selected works */}
           </div>
 
           {/*  className="md:-mt-10 mt-0 cursor-grab" */}
@@ -106,7 +96,6 @@ export default function Home() {
             <span className="bg-lightGreen text-darkGreen">
               /Noteworthy projects
             </span>
-            {/* /Noteworthy projects */}
           </div>
 
           {/*  className="md:-mt-10 mt-0 cursor-grab" */}
@@ -140,7 +129,7 @@ export default function Home() {
               rel="noreferrer"
               target="_blank"
               href="https://github.com/wassimbj"
-              className="block"
+              className="block hover:opacity-75 transition-opacity"
             >
               <div>
                 <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
@@ -153,7 +142,7 @@ export default function Home() {
               rel="noreferrer"
               target="_blank"
               href="https://linkedin.com/in/wassimbenjdida"
-              className="block"
+              className="block hover:opacity-75 transition-opacity"
             >
               <div>
                 <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
@@ -162,19 +151,22 @@ export default function Home() {
                 <p className="text-white"> Let&apos;s connect ! </p>
               </div>
             </a>
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="mailto:wassimbenjdida@gmail.com"
-              className="block"
+            <CopyToClipboard
+              text={myEmail}
+              onCopy={ () => alert("Copied 😁✅") }
             >
-              <div>
-                <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
-                  Email
-                </span>
-                <p className="text-white"> wassimbenjdida@gmail.com </p>
+              <div
+                title="Click to copy"
+                className="block hover:opacity-75 cursor-pointer transition-opacity"
+              >
+                <div>
+                  <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
+                    Email
+                  </span>
+                  <p className="text-white"> {myEmail} </p>
+                </div>
               </div>
-            </a>
+            </CopyToClipboard>
           </div>
         </section>
       </main>
