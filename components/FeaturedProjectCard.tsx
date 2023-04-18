@@ -48,7 +48,7 @@ export default function FeaturedProjectCard({
         {/* ----------------------- */}
         <div className={`${reverse ? "md:mr-5 mr-0" : "md:ml-5 ml-0"}`}>
           <div className="md:text-left mb-3 text-center">
-            <div className="flex items-center md:justify-normal justify-center md:py-0 py-2">
+            <div className="flex items-center md:justify-normal justify-center flex-wrap md:py-0 py-2">
               <span className="text-2xl block mr-5 text-white font-semibold">
                 {title}
               </span>
