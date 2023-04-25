@@ -113,9 +113,9 @@ export default function FeaturedProjectCard({
                 )}
               </div>
             </div>
-            <span className="text-lightGreen text-opacity-70 text-sm">
+            {/* <span className="text-lightGreen text-opacity-70 text-sm">
               {subtitle}
-            </span>
+            </span> */}
           </div>
           <p className="md:text-base font-light text-sm">{description}</p>
           <div className="flex items-center space-x-2 mt-5">

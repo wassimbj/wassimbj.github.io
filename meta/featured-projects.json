@@ -37,7 +37,7 @@
     "image": "/cleversnake-img.png",
     "demo": "https://clever-snake-game.vercel.app/",
     "code": "https://github.com/wassimbj/cleverSnakeGame",
-    "description": "Clever snake is a web-based game, its so tricky and fun, it contains only 5 levels for now, i will be adding more so soon, the UI kinda sucks but it will get improved so soon, i'm working on it.",
+    "description": "Clever snake is a web-based game, its so tricky and fun, it contains only 5 levels for now, i will be adding more so soon, the UI kinda sucks but it will get improved so soon.",
     "builtWith": [{ "name": "Javascript", "img": "JavaScript.svg" }]
   },
   {
@@ -46,7 +46,7 @@
     "image": "/trasty-img.png",
     "demo": "",
     "code": "https://github.com/wassimbj/trasty",
-    "description": "trasty is a p2p crowd shipping platform, it was a startup idea I had actually, users can post what they want to buy from abroad and anyone coming to their city can bring it with him, it has an internal chat and notification systems.",
+    "description": "trasty is a p2p crowd shipping platform, it was a startup idea I had actually, users can post what they want to buy from abroad and anyone coming to their city can bring it with him, it has an internal chat and notification system.",
     "builtWith": [
       { "name": "Node.js", "img": "NodeJS-Dark.svg" },
       { "name": "PostgreSQL", "img": "PostgreSQL-Light.svg" },
