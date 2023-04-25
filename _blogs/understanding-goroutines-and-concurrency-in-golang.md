@@ -48,7 +48,7 @@ so as you can see the output of this simple program is not as the function order
 
 *But wait a minute, why you put that time sleep at the end there ? is it necessary why is it necessary ?*
 
-so Go program is gonna finish executing when the main function ends, So, Our two function calls are running asynchronously in separate goroutines now. Wait for them to finish, but main function doesn't wait it doesn't know that the two functions are still running, so if we remove that sleep it won't print anything to the console. try it if you want.
+The Go program is going to finish executing when the main function ends, So, Our two function calls are running asynchronously in separate goroutines now. Waiting for them to finish, but the main function doesn't wait it doesn't know that the two functions are still running, so if we remove that sleep it won't print anything to the console. try it if you want.
 
 now lets go to channels.
 
