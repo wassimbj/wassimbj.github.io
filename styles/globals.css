@@ -5,3 +5,19 @@
 body {
   @apply text-gray-300 relative overflow-x-hidden;
 }
+
+button:active {
+  @apply scale-95 transition-all;
+}
+
+.bio a {
+  @apply text-lightGreen/75 underline;
+}
+
+.bio a:hover {
+  @apply text-lightGreen;
+}
+
+.prose {
+  @apply !max-w-full;
+}

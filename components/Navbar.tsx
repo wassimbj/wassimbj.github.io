@@ -1,25 +1,34 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
+
+type Section = { label: string; href: string; newWindow?: boolean };
+
+
 export default function Navbar() {
-  const navSections = [
-    // { label: "About", href: "#about" },
-    { label: "Work", href: "#work" },
-    { label: "Blog", href: "https://dev.to/wassimbj", newWindow: true },
-    { label: "Contact", href: "#contact" },
+  const router = useRouter()
+  const activePath = router.pathname
+  const navSections: Array<Section> = [
+    { label: "About", href: "/#about" },
+    { label: "Work", href: "/#work" },
+    { label: "Blog", href: "/blog" },
+    // { label: "Contact", href: "/#contact" },
   ];
+  console.log(activePath)
   return (
     <header className="flex items-center justify-center py-3 px-2">
       <nav className="flex items-center flex-wrap text-gray-400 space-x-5">
         {navSections.map((item, i) => (
-          <a
+          <Link
             key={i}
-            className="block hover:text-lightGreen md:text-lg text-base"
+            className={`block hover:text-lightGreen md:text-lg text-base ${activePath == item.href ? "text-lightGreen" : ""}}`}
             target={item.newWindow ? "_blank" : "_self"}
             rel="noreferrer"
             href={item.href}
           >
             --{item.label}
-          </a>
+          </Link>
         ))}
       </nav>
     </header>

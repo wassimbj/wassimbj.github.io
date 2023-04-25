@@ -1,34 +1,14 @@
 import Head from "next/head";
-import Image from "next/image";
 import Navbar from "../components/Navbar";
 import FeaturedProjectCard from "../components/FeaturedProjectCard";
-import { useEffect, useState } from "react";
 import NoteWorthyProjectCard from "../components/NoteWorthyProjectCard";
 import featuredProjects from "../meta/featured-projects.json";
 import noteWorthyProjects from "../meta/noteworthy-projects.json";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import Footer from "../components/Footer";
 
 export default function Home() {
-  const [page, setPage] = useState({
-    height: 0,
-    width: 0,
-  });
   const myEmail = "wassimbenjdida@gmail.com";
-
-  useEffect(() => {
-    setPage({
-      height: Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight,
-        document.body.clientHeight,
-        document.documentElement.clientHeight
-      ),
-      width: window.innerWidth,
-    });
-  }, []);
-
   return (
     <div>
       <Head>
@@ -42,27 +22,58 @@ export default function Home() {
       {/* ----- Nav ------ */}
 
       <main className="mx-auto max-w-5xl px-2">
-        <section id="about" className="mt-20">
+        <section id="about" className="md:mt-20 mt-5">
           <h1 className="text-lightGreen lg:text-5xl md:text-4xl text-3xl font-black">
             Wassim Ben Jdida
           </h1>
           <span className="block lg:text-3xl md:text-2xl text-xl font-semibold text-gray-200">
-            Software Developer
+            Software Engineer
           </span>
-          <p className="font-light max-w-2xl mt-10">
-            A software developer based in{" "}
-            <a
-              href="https://en.wikipedia.org/wiki/Sousse"
-              rel="noreferrer"
-              target={"_blank"}
-              className="inline-block text-lightGreen border-b border-lightGreen opacity-70 hover:opacity-100 cursor-help"
-            >
-              Tunisia
-            </a>
-            , passionate about building software that solves real-world
-            problems. I love to learn new things and share my knowledge with
-            others
+          <p className="font-light bio max-w-2xl mt-10">
+            Hey, I'm wassim, I'm so passionate about building software that
+            solves real world problems. I've studied computer science at{" "}
+            <a href="https://isitcom.rnu.tn/">ISICom</a>, and I'm currently
+            working as a software engineer at{" "}
+            <a href="https://misraj.sa/">Misraj</a>. I enjoy building side
+            projects, and recently got so interested in indie-hacking, startups
+            and entrepreneurship. I'm always looking for new opportunities to
+            learn and grow as a developer.
           </p>
+
+          <div className="flex items-center space-x-5 mt-5">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://github.com/wassimbj"
+              className="inline-block underline text-lightGreen/80 hover:text-lightGreen"
+            >
+              Github
+            </a>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://linkedin.com/in/wassimbenjdida"
+              className="inline-block underline text-lightGreen/80 hover:text-lightGreen"
+            >
+              Linkedin
+            </a>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://twitter.com/bjwassim"
+              className="inline-block underline text-lightGreen/80 hover:text-lightGreen"
+            >
+              Twitter
+            </a>
+            <CopyToClipboard text={myEmail} onCopy={() => alert("Copied 😁✅")}>
+              <button
+                title="Click to copy"
+                className="inline-block cursor-pointer underline text-lightGreen/80 hover:text-lightGreen"
+              >
+                Email
+              </button>
+            </CopyToClipboard>
+          </div>
         </section>
         <section id="work" className="mt-40">
           <div className="block sm:text-3xl mb-5 text-xl font-semibold text-lightGreen py-2">
@@ -115,7 +126,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="mt-40 pb-10">
+        {/* <section id="contact" className="mt-40 pb-10">
           <div className="block sm:text-3xl mb-5 text-xl font-semibold text-lightGreen py-2">
             <span className="text-lightGreen opacity-30">~$ cat </span>{" "}
             <span className="bg-lightGreen text-darkGreen">/Contact.me</span>
@@ -124,7 +135,7 @@ export default function Home() {
             My inbox is always open. Whether you have a question or just want to
             say hi, I’ll try my best to get back to you.
           </p>
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-10 mt-10">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-10 mt-10">
             <a
               rel="noreferrer"
               target="_blank"
@@ -141,6 +152,19 @@ export default function Home() {
             <a
               rel="noreferrer"
               target="_blank"
+              href="https://twitter.com/bjwassim"
+              className="block hover:opacity-75 transition-opacity"
+            >
+              <div>
+                <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
+                  Twitter
+                </span>
+                <p className="text-white"> Follow me </p>
+              </div>
+            </a>
+            <a
+              rel="noreferrer"
+              target="_blank"
               href="https://linkedin.com/in/wassimbenjdida"
               className="block hover:opacity-75 transition-opacity"
             >
@@ -148,13 +172,10 @@ export default function Home() {
                 <span className="inline-block text-lightGreen font-semibold text-xl border-b border-lightGreen">
                   Linkedin
                 </span>
-                <p className="text-white"> Let&apos;s connect ! </p>
+                <p className="text-white"> Let&apos;s connect! </p>
               </div>
             </a>
-            <CopyToClipboard
-              text={myEmail}
-              onCopy={ () => alert("Copied 😁✅") }
-            >
+            <CopyToClipboard text={myEmail} onCopy={() => alert("Copied 😁✅")}>
               <div
                 title="Click to copy"
                 className="block hover:opacity-75 cursor-pointer transition-opacity"
@@ -168,15 +189,10 @@ export default function Home() {
               </div>
             </CopyToClipboard>
           </div>
-        </section>
+        </section> */}
       </main>
 
-      <footer className="mt-24 bg-[#0a3d4b] px-3s py-3">
-        <div className="flex items-center justify-around md:flex-row flex-col text-xs">
-          <span> wassim ben jdida ©{new Date().getFullYear()} </span>
-          <span>Designed with ☕ by me (👉ﾟヮﾟ)👉</span>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
