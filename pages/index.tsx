@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import FeaturedProjectCard from "../components/FeaturedProjectCard";
