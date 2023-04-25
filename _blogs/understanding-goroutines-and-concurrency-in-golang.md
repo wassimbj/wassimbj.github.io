@@ -46,7 +46,7 @@ wassim has been created successfully
 
 so as you can see the output of this simple program is not as the function order, cause they are executed concurrently so the result can be unordered.
 
-`but wait a minute, why i put that time sleep at the end there ? is it necessary why is it necessary ?`
+*But wait a minute, why you put that time sleep at the end there ? is it necessary why is it necessary ?*
 
 so Go program is gonna finish executing when the main function ends, So, Our two function calls are running asynchronously in separate goroutines now. Wait for them to finish, but main function doesn't wait it doesn't know that the two functions are still running, so if we remove that sleep it won't print anything to the console. try it if you want.
 
@@ -122,7 +122,7 @@ so <-done is simply blocking the main function from exiting. and therefore endin
 
 And this is what is called *Channel Synchronization*, its just a fancy word that means blocking until a goroutine finish executing.
 
-**But**, When waiting for multiple goroutines to finish, you may prefer to use a WaitGroup.
+But, When waiting for multiple goroutines to finish, you may prefer to use a WaitGroup.
 
 
 ### WaitGroup
