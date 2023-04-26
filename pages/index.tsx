@@ -7,6 +7,8 @@ import featuredProjects from "../meta/featured-projects.json";
 import noteWorthyProjects from "../meta/noteworthy-projects.json";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Footer from "../components/Footer";
+import SocialMediaLinks from "../components/SocialMediaLinks";
+import Image from "next/image";
 
 export default function Home() {
   const myEmail = "wassimbenjdida@gmail.com";
@@ -24,56 +26,41 @@ export default function Home() {
 
       <main className="mx-auto max-w-5xl px-2">
         <section id="about" className="md:mt-20 mt-5">
-          <h1 className="text-lightGreen lg:text-5xl md:text-4xl text-3xl font-black">
-            Wassim Ben Jdida
-          </h1>
-          <span className="block lg:text-3xl md:text-2xl text-xl font-semibold text-gray-200">
-            Software Engineer
-          </span>
-          <p className="font-light bio max-w-2xl mt-10">
+          <div className="flex items-center flex-wrap">
+            <Image
+              src="/me.png"
+              title="That's me :D"
+              width={170}
+              height={170}
+              className="object-cover rounded-sm mr-3 block"
+              alt="ME :)"
+            />
+            <div>
+              <h1 className="text-lightGreen lg:text-5xl md:text-4xl text-3xl font-black">
+                Wassim Ben Jdida
+              </h1>
+              <span className="block lg:text-3xl md:text-2xl text-xl font-semibold text-gray-200">
+                Software Engineer
+              </span>
+            </div>
+          </div>
+          <p className="font-light bio max-w-2xl mt-7">
             Hey, I'm wassim, I'm so passionate about building software that
             solves real world problems. I've studied computer science at{" "}
-            <a href="https://isitcom.rnu.tn/">ISICom</a>, and I'm currently
+            <a href="https://isitcom.rnu.tn/" rel="noreferrer" target="_blank">ISICom↗</a>, and I'm currently
             working as a software engineer at{" "}
-            <a href="https://misraj.sa/">Misraj</a>. I enjoy building side
-            projects, and recently got so interested in indie-hacking, startups
-            and entrepreneurship. I'm always looking for new opportunities to
-            learn and grow as a developer.
+            <a href="https://misraj.sa/" rel="noreferrer" target="_blank">
+              Misraj↗
+            </a>
+            . I enjoy building helpfull tools and simple fun games, I recently
+            got so interested in indie-hacking, startups and entrepreneurship.
+            I'm always looking for new opportunities to learn and grow as a
+            developer and as a person. If you have any cool ideas or projects in
+            mind, feel free to reach out to me.
           </p>
 
           <div className="flex items-center space-x-5 mt-5">
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="https://github.com/wassimbj"
-              className="inline-block underline text-lightGreen/80 hover:text-lightGreen"
-            >
-              Github
-            </a>
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="https://linkedin.com/in/wassimbenjdida"
-              className="inline-block underline text-lightGreen/80 hover:text-lightGreen"
-            >
-              Linkedin
-            </a>
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href="https://twitter.com/bjwassim"
-              className="inline-block underline text-lightGreen/80 hover:text-lightGreen"
-            >
-              Twitter
-            </a>
-            <CopyToClipboard text={myEmail} onCopy={() => alert("Copied 😁✅")}>
-              <button
-                title="Click to copy"
-                className="inline-block cursor-pointer underline text-lightGreen/80 hover:text-lightGreen"
-              >
-                Email
-              </button>
-            </CopyToClipboard>
+            <SocialMediaLinks myEmail={myEmail} />
           </div>
         </section>
         <section id="work" className="mt-40">

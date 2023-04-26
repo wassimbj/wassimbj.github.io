@@ -2,11 +2,10 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import markdownToHtml, { getAllPosts, getPostBySlug } from "../../utils";
 import Head from "next/head";
-import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
 import dayjs from "dayjs";
-import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/themes/prism-tomorrow.min.css";
 
 type TPost = {
   title: string;
@@ -41,7 +40,7 @@ export default function Post({ post }: Props) {
         </Link>
         <div className="border-b border-lightGreen/25 pb-3 mb-4">
           <span className="font-bold text-3xl text-lightGreen block">
-            ↪ {post.title}
+            ↬ {post.title}
           </span>
           <span className="inline-block text-sm bg-white/5 px-3 mt-2 rounded-md">
             {dayjs(post.date).format("DD MMM YYYY")}

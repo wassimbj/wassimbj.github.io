@@ -10,6 +10,14 @@ button:active {
   @apply scale-95 transition-all;
 }
 
+section {
+  @apply pt-3
+}
+
+p,a {
+  @apply md:text-base text-sm
+}
+
 .bio a {
   @apply text-lightGreen/75 underline;
 }
@@ -20,4 +28,8 @@ button:active {
 
 .prose {
   @apply !max-w-full;
+}
+
+#nprogress .bar {
+  @apply !bg-lightGreen;
 }

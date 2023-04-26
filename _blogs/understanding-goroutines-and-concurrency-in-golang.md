@@ -118,7 +118,7 @@ User image has been successfully uploaded to the cloud !!
 Image uploaded:  true
 ```
 
-so <-done is simply blocking the main function from exiting. and therefore ending the program from executing.
+so `<-done` is simply blocking the main function from exiting. and therefore ending the program from executing.
 
 And this is what is called *Channel Synchronization*, its just a fancy word that means blocking until a goroutine finish executing.
 

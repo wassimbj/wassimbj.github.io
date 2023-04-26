@@ -13,11 +13,10 @@ export default function Navbar() {
     { label: "About", href: "/#about" },
     { label: "Work", href: "/#work" },
     { label: "Blog", href: "/blog" },
-    // { label: "Contact", href: "/#contact" },
   ];
   console.log(activePath)
   return (
-    <header className="flex items-center justify-center py-3 px-2">
+    <header className="flex items-center justify-center p-2 bg-lightGreen/5">
       <nav className="flex items-center flex-wrap text-gray-400 space-x-5">
         {navSections.map((item, i) => (
           <Link

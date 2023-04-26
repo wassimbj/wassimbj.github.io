@@ -27,7 +27,7 @@ export default function BlogIndex({ allPosts }: { allPosts: Array<any> }) {
               passHref
               className="px-2 group block py-3 border-b border-white/10"
             >
-              <span className="font-semibold pr-5 group-active:scale-[.98] group-hover:text-lightGreen transition-all underline block">
+              <span className="font-semibold pr-5 group-active:text-lightGreen/80 group-hover:text-lightGreen transition-all underline block">
                 {post.title}
               </span>
               <span className="font-light text-xs whitespace-nowrap">
