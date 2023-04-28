@@ -55,8 +55,8 @@ export default function Home() {
             . I enjoy building helpfull tools and simple fun games, I recently
             got so interested in indie-hacking, startups and entrepreneurship.
             I'm always looking for new opportunities to learn and grow as a
-            developer and as a person. If you have any cool ideas or projects in
-            mind, feel free to reach out to me.
+            developer and as a person. If you have any cool ideas, projects in
+            mind or just want to say hi, feel free to reach out to me.
           </p>
 
           <div className="flex items-center space-x-5 mt-5">
