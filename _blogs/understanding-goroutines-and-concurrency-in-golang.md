@@ -3,7 +3,7 @@ title: 'Understanding goroutines and concurrency in Golang'
 date: '2023-04-25T17:47:58Z'
 ---
 
-*this article assume that you have read about Golang, and know the basics at least.*
+*This article assumes that you have read about Golang, and know the basics at least.*
 
 So let me start with the definition of concurrency,
 it's simply the execution of some code instructions at the same time. that's it.
@@ -13,7 +13,7 @@ it's simply the execution of some code instructions at the same time. that's it.
 
 > A Thread, or thread of execution, is a software term for the basic ordered sequence of instructions that can be passed through or processed by a single CPU core. - [stackoverflow](https://stackoverflow.com/questions/5201852/what-is-a-thread-really).
 
-so goroutine let us execute functions concurrently, how is that ?
+so goroutine lets us execute functions concurrently, how is that?
 a simple example:
 ```go
 package main
@@ -44,7 +44,7 @@ User image has been successfully uploaded to the cloud !!
 wassim has been created successfully
 ```
 
-so as you can see the output of this simple program is not as the function order, cause they are executed concurrently so the result can be unordered.
+so as you can see the output of this simple program is not in the function order, cause they are executed concurrently so the result can be unordered.
 
 *But wait a minute, why you put that time sleep at the end there ? is it necessary why is it necessary ?*
 
@@ -87,11 +87,11 @@ func main() {
 
 So let me first tell you what is the difference between this `chan<-` , this `<-chan` and this `chan`.
 
-"chan" => in the function parameter, means that we will read and write from that channel, its a data type.
+"chan" => in the function parameter, means that we will read and write from that channel, it's a data type.
 "chan<-" => means that we will write only
-"<-chan" => means that we will read only
+"<-chan" => means that we will read-only
 
-the output of this progam:
+the output of this program:
 
 ```bash
 User image has been successfully uploaded to the cloud !!
@@ -101,12 +101,12 @@ User created:  true
 ```
 
 
-so in the main function we created a channel named done, we passed that channel as a parameter to our workers (createUser, and upload), and whenver a worker is done we notify the main function.
+so in the main function we created a channel named done, we passed that channel as a parameter to our workers (createUser, and upload), and whenever a worker is done we notify the main function.
 we put in the channel with `channelName <- VALUE`
 
 and we consume the message from a channel like this `<-channelName`
 
-if we don't consume the message, the goroutine function is not gonna print anything cause main will not wait for it, so by using `<-done` we are telling the main function to wait until we get a message from the worker.
+if we don't consume the message, the goroutine function is not gonna print anything cause the main will not wait for it, so by using `<-done` we are telling the main function to wait until we get a message from the worker.
 so if we removed this line here 
 ```go
 fmt.Println("User created: ", <-done)
