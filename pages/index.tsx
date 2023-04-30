@@ -46,9 +46,7 @@ export default function Home() {
           </div>
           <p className="font-light bio max-w-2xl mt-7">
             Hey, I'm wassim, I'm so passionate about building software that
-            solves real world problems. I've studied computer science at{" "}
-            <a href="https://isitcom.rnu.tn/" rel="noreferrer" target="_blank">ISICom↗</a>, and I'm currently
-            working as a software engineer at{" "}
+            solves real world problems. I'm currently working as a software engineer at{" "}
             <a href="https://misraj.sa/" rel="noreferrer" target="_blank">
               Misraj↗
             </a>
