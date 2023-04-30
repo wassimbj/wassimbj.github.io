@@ -18,9 +18,16 @@
   },
   {
     "title": "Educative.io Courses Downloader.",
-    "description": "a python script with selenium that will download educative.io courses in pdf in a really organised manner.",
+    "description": "a python script with selenium that will download educative.io courses in pdf in an organized manner.",
     "demo": "",
     "code": "https://github.com/wassimbj/educative.io-pdf-downloader",
     "builtWith": [{ "name": "Python", "img": "Python-Light.svg" }]
+  },
+  {
+    "title": "SearchGPT.",
+    "description": "A simple Chrome extension to start a conversation with chatGPT directly from your search bar.",
+    "demo": "",
+    "code": "https://github.com/wassimbj/searchgpt",
+    "builtWith": [{ "name": "JavaScript", "img": "JavaScript.svg" }]
   }
 ]
