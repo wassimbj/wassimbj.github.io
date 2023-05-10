@@ -45,13 +45,13 @@ export default function Home() {
             </div>
           </div>
           <p className="font-light bio max-w-2xl mt-7">
-            Hey, I'm wassim, I'm so passionate about building software that
-            solves real world problems. I'm currently working as a software engineer at{" "}
+            Hey, I'm wassim, I love building software that solves real world problems,
+            I also enjoy building helpful tools and simple fun games.
+            I'm currently working as a software engineer at{" "}
             <a href="https://misraj.sa/" rel="noreferrer" target="_blank">
               Misraj↗
             </a>
-            . I enjoy building helpfull tools and simple fun games, I recently
-            got so interested in indie-hacking, startups and entrepreneurship.
+            .I'm interested in indie-hacking, startups and entrepreneurship and
             I'm always looking for new opportunities to learn and grow as a
             developer and as a person. If you have any cool ideas, projects in
             mind or just want to say hi, feel free to reach out to me.
