@@ -1,5 +1,5 @@
 ---
-title: "How to upload files in golang ?"
+title: "How to upload files in Golang ?"
 date: "2023-05-30T17:44:47Z"
 ---
 

@@ -3,7 +3,6 @@ import ErrorPage from "next/error";
 import markdownToHtml, {
   getAllPosts,
   getPostBySlug,
-  htmlToText,
 } from "../../utils";
 import Head from "next/head";
 import Navbar from "../../components/Navbar";
