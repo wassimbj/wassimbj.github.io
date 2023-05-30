@@ -1,6 +1,7 @@
 ---
 title: 'Understanding goroutines and concurrency in Golang'
 date: '2023-04-25T17:47:58Z'
+keywords: "Golang, goroutines, concurrency, channels, waitgroup"
 ---
 
 *This article assumes that you have read about Golang, and know the basics at least.*

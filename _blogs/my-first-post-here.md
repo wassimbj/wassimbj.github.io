@@ -1,6 +1,7 @@
 ---
 title: 'My first post here'
 date: '2023-04-25T17:10:58Z'
+keywords: "blogs, start-ups, programming, tips"
 ---
 
 Heyy, it's me, this is my first blog post here. I will be sharing my thoughts, ideas, and experiences here. I hope you enjoy reading my posts as much as I enjoy writing them. 

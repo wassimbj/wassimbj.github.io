@@ -8,14 +8,24 @@ if [[ -z "$blog_title" ]]; then
     exit 1
 fi
 
-clean_title="${blog_title//' '/'-'}"
+trim() {
+    local var="$*"
+    # remove leading whitespace characters
+    var="${var#"${var%%[![:space:]]*}"}"
+    # remove trailing whitespace characters
+    var="${var%"${var##*[![:space:]]}"}"
+    printf '%s' "$var"
+}
+
+slug="${blog_title,,}" # lowercase
+slug="${slug//' '/'-'}"
 timestamp=$(date --utc +%FT%TZ)
 
-touch "./_blogs/$clean_title.md"
+touch "./_blogs/$slug.md"
 
 template="---
 title: '$blog_title'
 date: '$timestamp'
 ---"
 
-echo "$template" > "./_blogs/$clean_title.md"
+echo "$template" > "./_blogs/$slug.md"
