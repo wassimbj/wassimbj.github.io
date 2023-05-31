@@ -1,6 +1,7 @@
 ---
 title: "How to upload files in Golang ?"
 date: "2023-05-30T17:44:47Z"
+keywords: "Golang, upload, single file, multiple files, form"
 ---
 
 In this blog I will be using the **native Golang http package** to upload files, no third party packages. We will see how to upload single and multiple files.
@@ -22,7 +23,7 @@ The form is simple and straight forward. The only thing to note is the `enctype=
 ## Single file upload
 
 ```go
-func uploadFile(w http.ResponseWriter, r *http.Request){
+func uploadSingleFile(w http.ResponseWriter, r *http.Request){
   file, header, _ := r.FormFile("file")
   defer file.Close()
 
@@ -31,9 +32,10 @@ func uploadFile(w http.ResponseWriter, r *http.Request){
   defer dst.Close()
 
   // upload the file to destination path
-  nb_bytes, _ := io.Copy(dst, file)}
+  nb_bytes, _ := io.Copy(dst, file)
 
   fmt.Println("File uploaded successfully")
+}
 ```
 
 💡**Note:** All of the `_` underscore variables are errors, I just ignored them for the sake of simplicity. so don't do that in production.
@@ -45,7 +47,7 @@ As you noticed we get the uploaded file with the `r.FormFile("input_name_here")`
 First of all before you can select multiple files, you need to add the `multiple` attribute to the file input
 
 ```go
-func uploadFile(w http.ResponseWriter, r *http.Request){
+func uploadMultipleFiles(w http.ResponseWriter, r *http.Request){
   // key = "file" in the form
   for key, files := range r.MultipartForm.File {
     for _, file := range files {
