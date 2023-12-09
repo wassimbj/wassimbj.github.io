@@ -24,7 +24,7 @@ The form is simple and straight forward. The only thing to note is the `enctype=
 
 ```go
 func uploadSingleFile(w http.ResponseWriter, r *http.Request){
-  file, header, _ := r.FormFile("file")
+  file, header, _ := r.FormFile("file") // FormFile automatically called ParseMultipartForm
   defer file.Close()
 
   // create a destination file
@@ -49,6 +49,8 @@ First of all before you can select multiple files, you need to add the `multiple
 ```go
 func uploadMultipleFiles(w http.ResponseWriter, r *http.Request){
   // key = "file" in the form
+  //first of all ParseMultipartForm must be called 
+  r.ParseMultipartForm(32 << 20)
   for key, files := range r.MultipartForm.File {
     for _, file := range files {
       dst, _ := os.Create(filepath.Join("./", file.Filename))
