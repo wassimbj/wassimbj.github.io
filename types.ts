@@ -1,6 +1,4 @@
-export {}
-
-interface WorkProps {
+export interface WorkProps {
    title: string;
    description: string;
    subtitle: string;
