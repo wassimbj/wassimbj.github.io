@@ -80,10 +80,10 @@ export default function Post({ post }: Props) {
       </div>
 
       <Link
-        href="/"
+        href="#"
         className="text-center block underline text-lightGreen/70 mt-5 py-2 text-sm hover:text-lightGreen"
       >
-        Home
+        Top
       </Link>
     </>
   );
