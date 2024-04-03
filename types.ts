@@ -1,3 +1,5 @@
+export {}
+
 interface WorkProps {
    title: string;
    description: string;
