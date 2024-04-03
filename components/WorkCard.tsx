@@ -1,13 +1,12 @@
 import React from "react";
+import { WorkProps } from "../types";
 import CodeIcon from "./CodeIcon";
 import LinkIcon from "./LinkIcon";
 
 export default function WorkCard({
-  builtWith,
   code,
   demo,
   description,
-  subtitle,
   title,
 }: WorkProps) {
   return (
