@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "blog": "sh new_blog.sh",
+    "new:blog": "sh new_blog.sh",
     "export": "next export",
     "clean": "rm node_modules .next out yarn-lock -rf",
     "lint": "next lint"

@@ -1,10 +1,15 @@
 #!bash
-# to run this script -> yarn blog <title>
+# to run this script run `yarn new:blog "<title>"`
 
 blog_title=$*
 
 if [[ -z "$blog_title" ]]; then
-    echo "✕ Please enter a title for the blog"
+    echo """
+        Error:
+    ===========================================
+        ✕ Please enter a title for the blog
+    ===========================================
+    """
     exit 1
 fi
 
