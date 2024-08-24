@@ -1,9 +1,14 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
-import remarkPrism from "remark-prism";
+import rehypeDocument from "rehype-document";
+import rehypeFormat from "rehype-format";
+import rehypeStringify from "rehype-stringify";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import { unified } from "unified";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeCallouts from "rehype-callouts";
 
 const blogs_dir_name = "_blogs";
 const postsDirectory = join(process.cwd(), blogs_dir_name);
@@ -42,10 +47,18 @@ export function getAllPosts() {
 }
 
 export default async function markdownToHtml(markdown: string) {
-  const result = await remark()
-    .use(html, { sanitize: false })
-    .use(remarkPrism)
+  const result = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeDocument)
+    .use(rehypeCallouts, {
+      theme: "github",
+    })
+    .use(rehypeFormat)
+    .use(rehypePrettyCode, {
+      theme: "catppuccin-mocha",
+    })
+    .use(rehypeStringify)
     .process(markdown);
   return result.toString();
 }
-

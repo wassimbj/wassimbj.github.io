@@ -1,9 +1,10 @@
-#!bash
+#!/bin/bash
 # to run this script run `yarn new:blog "<title>"`
 
 blog_title=$*
+echo "$blog_title";
 
-if [[ -z "$blog_title" ]]; then
+if [ -z "$blog_title" ]; then
     echo """
         Error:
     ===========================================
@@ -22,8 +23,8 @@ trim() {
     printf '%s' "$var"
 }
 
-slug="${blog_title,,}" # lowercase
-slug="${slug//' '/'-'}"
+slug=$(echo "$blog_title" | tr '[:upper:]' '[:lower:]') # to lowercase
+slug=$(echo "$slug" | sed 's/ /-/g')
 timestamp=$(date --utc +%FT%TZ)
 
 touch "./_blogs/$slug.md"

@@ -74,7 +74,7 @@ export default function Post({ post }: Props) {
           </span>
         </div>
         <div
-          className="prose prose-strong:font-semibold prose-hr:border-white/10 prose-code:text-lightGreen/70 prose-code:bg-gray-900 prose-code:p-1 prose-code:rounded-md text-sm prose-a:text-lightGreen prose-headings:text-gray-200 hover:prose-a:text-lightGreen/80 prose-p:prose-blockquote:text-white/40 prose-strong:text-gray-400 prose-p:text-gray-400"
+          className="prose prose-strong:font-semibold prose-hr:border-white/10 prose-code:text-lightGreen/70 prose-li:text-sm prose-code:!text-sm prose-code:inline-block prose-code:p-0.5 prose-code:rounded-md text-sm prose-a:text-lightGreen prose-li:text-slate-400 prose-headings:text-slate-200 hover:prose-a:text-lightGreen/80 prose-strong:text-slate-400 prose-p:text-slate-400"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </div>

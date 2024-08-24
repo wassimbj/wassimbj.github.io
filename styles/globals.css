@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "rehype-callouts/theme/github";
 
 body {
   @apply text-gray-300 relative overflow-x-hidden;
@@ -11,11 +12,12 @@ button:active {
 }
 
 section {
-  @apply pt-3
+  @apply pt-3;
 }
 
-p,a {
-  @apply md:text-base text-sm
+p,
+a {
+  @apply md:text-base text-sm;
 }
 
 .bio a {
@@ -33,3 +35,11 @@ p,a {
 #nprogress .bar {
   @apply !bg-lightGreen;
 }
+
+/* .callout { */
+  /* padding: 16px;
+  margin: 16px 0;
+  border-left: 4px solid;
+  border-radius: 4px; */
+  /* @apply text-gray-400 */
+/* } */
