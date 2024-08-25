@@ -63,9 +63,9 @@ PUBLIC_KEY="your-public-key-contents-here"
 
 echo "$PUBLIC_KEY" | dokku ssh-keys:add admin
 ```
-When you push code from your machine to the server, Dokku uses this SSH key for authentication.
+When you push your code to the server, Dokku uses this SSH key for authentication.
 
-Now we’ve finished setting up Dokku on our server.
+Ok, so now we’ve finished setting up Dokku on our server.
 
 ## Domains
 First, Dokku is not a DNS server; it just configures Nginx. Mapping your IP address to your custom domain should be handled by you. You can use Cloudflare, it’s secure, easy, and free.
@@ -97,7 +97,7 @@ As mentioned, once your DNS records are configured, your app should be accessibl
 > A common pitfall that might waste hours is the port mapping. By default, Dokku maps the HTTP port 80 to port 5000 inside your container. If your app runs on a different port like 3000 or 9999, you need to manually set the port with `dokku ports:add http:80:MY_APP_PORT`.
 
 ## Database and Plugins
-Now we need a database for storing pastebins. Dokku supports plugins for various services like PostgreSQL. You can find all available plugins [here](https://dokku.com/docs/community/plugins/).
+Now we need a database for storing pastebins. Dokku supports plugins for various services like PostgreSQL, MySQL, Mongo, ect... You can find all available plugins [here](https://dokku.com/docs/community/plugins/).
 
 For this app, I’ll use PostgreSQL, so let’s install the plugin and link it to our app:
 ```bash
@@ -173,7 +173,7 @@ Enable auto-renewal:
 dokku letsencrypt:cron-job --add
 ```
 
-Enabling Let’s Encrypt will map the HTTPS port (443) to your app. If your app runs on a different port than 5000, you’ll need to adjust the port mapping as mentioned [earlier](#domains).
+Enabling Let’s Encrypt will automatically map the HTTPS port (443) to your app. If your app runs on a different port than 5000, you’ll need to adjust the port mapping as mentioned [earlier](#domains).
 
 ---
 
