@@ -35,9 +35,10 @@ A buildpack is a set of scripts that handle setting up, building, and running yo
 
 You can specify how the buildpack should run your application using a Procfile if you need a custom command. For example, if your app is built with Node.js, the buildpack will automatically detect this and try to run the app with `npm run start`.
 
-You can override this behavior by creating a _Procfile_ at the root of your project with:
+You can override this behavior by creating a _Procfile_ at the root of your project.
+Just like in our case, in nestjs to run the production build, npm start won't work, we need to run npm start:prod so my Procfile will contain this:
 ```bash
-web: run custom command
+web: npm run start:prod
 ```
 
 ## Getting Started
@@ -62,6 +63,9 @@ The version might differ if you’re reading this in the future.
 PUBLIC_KEY="your-public-key-contents-here"
 
 echo "$PUBLIC_KEY" | dokku ssh-keys:add admin
+
+# If you already copied your public key to your server before ssh you can just do
+cat ~/.ssh/authorized_keys | dokku ssh-keys:add admin
 ```
 When you push your code to the server, Dokku uses this SSH key for authentication.
 
@@ -93,8 +97,11 @@ dokku apps:create myapi
 ```
 As mentioned, once your DNS records are configured, your app should be accessible at **myapi.mydomain.com**.
 
+> [!TIP]
+> You can see the port mappings for your app with `dokku ports:report myapp`.
+
 > [!IMPORTANT]
-> A common pitfall that might waste hours is the port mapping. By default, Dokku maps the HTTP port 80 to port 5000 inside your container. If your app runs on a different port like 3000 or 9999, you need to manually set the port with `dokku ports:add http:80:MY_APP_PORT`.
+> A common pitfall that might waste hours is the port mapping. By default, Dokku maps the HTTP port 80 to port 5000 inside your container. If your app runs on a different port like 3000 or 9999, you need to manually set the port with `dokku ports:set myapp http:80:MY_APP_PORT`.
 
 ## Database and Plugins
 Now we need a database for storing pastebins. Dokku supports plugins for various services like PostgreSQL, MySQL, Mongo, ect... You can find all available plugins [here](https://dokku.com/docs/community/plugins/).
@@ -147,7 +154,7 @@ ssh-add -k path/to/private.key
 
 Now deploy your app:
 ```bash
-git push prod main
+git push prod master
 ```
 
 When the deployment finishes, Dokku will display the domain where your app is accessible. Point your server IP to that domain, and everything should work as expected.
@@ -174,6 +181,9 @@ dokku letsencrypt:cron-job --add
 ```
 
 Enabling Let’s Encrypt will automatically map the HTTPS port (443) to your app. If your app runs on a different port than 5000, you’ll need to adjust the port mapping as mentioned [earlier](#domains).
+
+> [!TIP]
+> If you don't have a domain name and just want to play with dokku, visiting the ip directly might just show the default nginx page, this is because of the default nginx configuration, and dokku using the server hostname which won't resolve to anything. so just remove the default nginx config and everything should work fine `sudo rm -rf /etc/nginx/sites-enabled/default`
 
 ---
 
