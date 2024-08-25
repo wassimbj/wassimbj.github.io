@@ -9,6 +9,9 @@ import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeCallouts from "rehype-callouts";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
+
 
 const blogs_dir_name = "_blogs";
 const postsDirectory = join(process.cwd(), blogs_dir_name);
@@ -55,6 +58,8 @@ export default async function markdownToHtml(markdown: string) {
       theme: "github",
     })
     .use(rehypeFormat)
+    .use(rehypeAutolinkHeadings)
+    .use(rehypeSlug)
     .use(rehypePrettyCode, {
       theme: "catppuccin-mocha",
     })

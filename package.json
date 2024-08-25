@@ -11,6 +11,9 @@
     "clean": "rm node_modules .next out yarn-lock -rf",
     "lint": "next lint"
   },
+  "engines" : { 
+    "node" : ">=20.12.2" 
+  },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "dayjs": "^1.11.7",
