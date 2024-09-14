@@ -15,7 +15,7 @@ export default function Home() {
         <title>Wassim Ben Jdida | Home</title>
         <meta
           name="description"
-          content="Hey there, my name is wassim and i'm a software engineer. I'm interested in programming, cloud, games and business"
+          content="Hey there, my name is wassim and i'm a software engineer. I'm interested in software, cloud, games and startups"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -49,7 +49,12 @@ export default function Home() {
             Hey, I'm wassim, I love building software that solves real world
             problems, I also enjoy building helpful tools and simple fun games.
             I'm currently working as a software engineer at{" "}
-            <a href="https://misraj.sa/" rel="noreferrer" target="_blank">
+            <a
+              href="https://misraj.sa/"
+              rel="noreferrer"
+              className="underline text-lightGreen hover:bg-lightGreen/20"
+              target="_blank"
+            >
               Misraj↗
             </a>
             .I'm always looking for new opportunities to learn and grow as a
@@ -66,10 +71,9 @@ export default function Home() {
         {/* ----- Works ------ */}
         <section id="work" className="mt-32">
           <div className="mb-5">
-            <div className="block sm:text-3xl text-xl font-semibold text-lightGreen py-2">
-              <span className="text-lightGreen opacity-30 ">~$ ls</span>{" "}
-              <span className="bg-lightGreen text-darkGreen">/Things i made</span>
-            </div>
+            <span className="sm:text-3xl text-xl font-semibold bg-lightGreen text-darkGreen">
+              /Things i made
+            </span>
           </div>
 
           <div className="space-y-3">

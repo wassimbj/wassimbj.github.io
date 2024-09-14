@@ -16,12 +16,12 @@ export default function Navbar() {
   ];
   console.log(activePath)
   return (
-    <header className="flex items-center justify-center p-2 bg-lightGreen/5">
+    <header className="flex items-center justify-center p-2 bg-lightGreen/5" id="navbar">
       <nav className="flex items-center flex-wrap text-gray-400 space-x-5">
         {navSections.map((item, i) => (
           <Link
             key={i}
-            className={`block hover:text-lightGreen md:text-lg text-base ${activePath == item.href ? "text-lightGreen" : ""}}`}
+            className={`block hover:bg-lightGreen/10 hover:text-lightGreen md:text-lg text-base ${activePath == item.href ? "text-lightGreen" : ""}}`}
             target={item.newWindow ? "_blank" : "_self"}
             rel="noreferrer"
             href={item.href}

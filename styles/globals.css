@@ -20,13 +20,21 @@ a {
   @apply md:text-base text-sm;
 }
 
-.bio a {
+/* .bio a {
   @apply text-lightGreen/75 underline;
-}
-
+} */
+/* 
 .bio a:hover {
   @apply text-lightGreen;
+} */
+
+/* a:not(#navbar a) {
+  @apply underline text-lightGreen;
 }
+
+a:not(#navbar a):hover {
+  @apply bg-lightGreen/10;
+} */
 
 .prose {
   @apply !max-w-full;
@@ -37,9 +45,9 @@ a {
 }
 
 /* .callout { */
-  /* padding: 16px;
+/* padding: 16px;
   margin: 16px 0;
   border-left: 4px solid;
   border-radius: 4px; */
-  /* @apply text-gray-400 */
+/* @apply text-gray-400 */
 /* } */

@@ -1,7 +1,7 @@
 [
   {
     "title": "Clever Snake Game",
-    "description": "Clever snake is a web-based game, its so tricky and fun, it contains only 5 levels for now, i will be adding more so soon, the UI kinda sucks but it will get improved so soon.",
+    "description": "A puzzle like web-based game, with levels that gets harder each time",
     "subtitle": "Software Developer",
     "image": "/cleversnake-img.png",
     "demo": "https://clever-snake-game.vercel.app/",
@@ -17,7 +17,7 @@
   },
   {
     "title": "Time slot picker",
-    "description": "smooth, fully responsive and multi-language time slot picker reactjs component, that is used by 5+ projects by now.",
+    "description": "smooth, fully responsive and multi-language time slot picker reactjs component, that's used by 5+ projects by now.",
     "demo": "https://rc-slotpicker.netlify.app",
     "code": "https://github.com/wassimbj/slotpicker",
     "builtWith": [
@@ -27,7 +27,7 @@
   },
   {
     "title": "Educative.io Courses Downloader",
-    "description": "a python script with selenium that will download educative.io courses in pdf in an organized manner.",
+    "description": "a python script with selenium that will download educative.io courses in pdf.",
     "demo": "",
     "code": "https://github.com/wassimbj/educative.io-pdf-downloader",
     "builtWith": [{ "name": "Python", "img": "Python-Light.svg" }]
@@ -48,7 +48,7 @@
   },
   {
     "title": "Simpleq",
-    "description": "simple redis-based task queue for background processing, written in Go, built this project for learning how queues works only",
+    "description": "simple redis-based task queue for background processing, written in Go, I only built this project for learning how queues works",
     "demo": "",
     "code": "https://github.com/wassimbj/simpleq",
     "builtWith": [{ "name": "JavaScript", "img": "JavaScript.svg" }]
@@ -58,13 +58,6 @@
     "description": "pgx auto migrator, This is not ready for production, i started it because i wanted to have prisma like migration",
     "demo": "",
     "code": "https://github.com/wassimbj/migrator",
-    "builtWith": [{ "name": "JavaScript", "img": "JavaScript.svg" }]
-  },
-  {
-    "title": "Ititz",
-    "description": "simple, well tested, and easy to use js validation library",
-    "demo": "",
-    "code": "https://github.com/wassimbj/itiz",
     "builtWith": [{ "name": "JavaScript", "img": "JavaScript.svg" }]
   }
 ]
