@@ -1,9 +1,6 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import markdownToHtml, {
-  getAllPosts,
-  getPostBySlug,
-} from "../../utils";
+import markdownToHtml, { getAllPosts, getPostBySlug } from "../../utils";
 import Head from "next/head";
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
@@ -74,17 +71,20 @@ export default function Post({ post }: Props) {
           </span>
         </div>
         <div
-          className="prose prose-strong:font-semibold prose-hr:border-white/10 prose-code:text-lightGreen/70 prose-li:text-sm prose-code:!text-sm prose-code:inline-block prose-code:p-0.5 prose-code:rounded-md text-sm prose-a:text-lightGreen prose-li:text-slate-400 prose-headings:text-slate-200 hover:prose-a:text-lightGreen/80 prose-strong:text-slate-400 prose-p:text-slate-400"
+          id="blog-content"
+          className="prose prose-strong:font-bold prose-hr:border-white/10 prose-li:text-sm prose-code:!text-sm prose-code:inline-block prose-code:p-0.5 prose-code:rounded-md text-sm prose-a:text-lightGreen prose-li:text-gray-400 prose-headings:text-gray-200 hover:prose-a:text-lightGreen/80 prose-strong:text-gray-400 prose-p:text-gray-400"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </div>
 
-      <Link
-        href="#"
-        className="text-center block underline text-lightGreen/70 mt-5 py-2 text-sm hover:text-lightGreen"
-      >
-        Top
-      </Link>
+      <div className="flex justify-center mt-10">
+        <Link
+          href="#"
+          className="underline text-lightGreen/70 p-2 text-sm hover:text-lightGreen"
+        >
+          Top 👆
+        </Link>
+      </div>
     </>
   );
 }

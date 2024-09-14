@@ -35,3 +35,6 @@ date: '$timestamp'
 ---"
 
 echo "$template" > "./_blogs/$slug.md"
+
+# open it in VScode
+code "./_blogs/$slug.md"
