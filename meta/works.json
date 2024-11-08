@@ -1,63 +1,56 @@
 [
   {
+    "title": "Todoit Gnome extension",
+    "description": "Todoit is a gnome shell extension, i built it to help me stay focused on my daily tasks",
+    "demo": "",
+    "code": "https://github.com/wassimbj/todoit-gnome"
+  },
+  {
     "title": "Clever Snake Game",
     "description": "A puzzle like web-based game, with levels that gets harder each time",
-    "subtitle": "Software Developer",
-    "image": "/cleversnake-img.png",
     "demo": "https://clever-snake-game.vercel.app/",
-    "code": "https://github.com/wassimbj/cleverSnakeGame",
-    "builtWith": [{ "name": "Javascript", "img": "JavaScript.svg" }]
+    "code": "https://github.com/wassimbj/cleverSnakeGame"
   },
   {
     "title": "Save useful links for later",
     "description": "lnk, is a CLI tool for saving useful links, the link title is scraped automatically.",
     "demo": "",
-    "code": "https://github.com/wassimbj/lnk",
-    "builtWith": [{ "name": "Go", "img": "GoLang.svg" }]
+    "code": "https://github.com/wassimbj/lnk"
   },
   {
     "title": "Time slot picker",
     "description": "smooth, fully responsive and multi-language time slot picker reactjs component, that's used by 5+ projects by now.",
     "demo": "https://rc-slotpicker.netlify.app",
-    "code": "https://github.com/wassimbj/slotpicker",
-    "builtWith": [
-      { "name": "React.js", "img": "React-Dark.svg" },
-      { "name": "TypeScript", "img": "TypeScript.svg" }
-    ]
+    "code": "https://github.com/wassimbj/slotpicker"
   },
   {
     "title": "Educative.io Courses Downloader",
     "description": "a python script with selenium that will download educative.io courses in pdf.",
     "demo": "",
-    "code": "https://github.com/wassimbj/educative.io-pdf-downloader",
-    "builtWith": [{ "name": "Python", "img": "Python-Light.svg" }]
+    "code": "https://github.com/wassimbj/educative.io-pdf-downloader"
   },
   {
     "title": "SearchGPT",
     "description": "A simple Chrome extension to start a conversation with chatGPT directly from your search bar.",
     "demo": "",
-    "code": "https://github.com/wassimbj/searchgpt",
-    "builtWith": [{ "name": "JavaScript", "img": "JavaScript.svg" }]
+    "code": "https://github.com/wassimbj/searchgpt"
   },
   {
     "title": "Gorl",
     "description": "Redis-based rate limiter written in go",
     "demo": "",
-    "code": "https://github.com/wassimbj/gorl",
-    "builtWith": [{ "name": "JavaScript", "img": "JavaScript.svg" }]
+    "code": "https://github.com/wassimbj/gorl"
   },
   {
     "title": "Simpleq",
     "description": "simple redis-based task queue for background processing, written in Go, I only built this project for learning how queues works",
     "demo": "",
-    "code": "https://github.com/wassimbj/simpleq",
-    "builtWith": [{ "name": "JavaScript", "img": "JavaScript.svg" }]
+    "code": "https://github.com/wassimbj/simpleq"
   },
   {
     "title": "Migrator",
     "description": "pgx auto migrator, This is not ready for production, i started it because i wanted to have prisma like migration",
     "demo": "",
-    "code": "https://github.com/wassimbj/migrator",
-    "builtWith": [{ "name": "JavaScript", "img": "JavaScript.svg" }]
+    "code": "https://github.com/wassimbj/migrator"
   }
 ]
