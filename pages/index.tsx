@@ -79,12 +79,10 @@ export default function Home() {
           <div className="space-y-3">
             {works.map((work, i) => (
               <WorkCard
-                builtWith={work.builtWith}
                 code={work.code}
                 demo={work.demo}
                 description={work.description}
                 title={work.title}
-                subtitle={work.subtitle}
                 key={i}
               />
             ))}
