@@ -59,9 +59,9 @@ http.interceptors.response((resp) => {
 
 Well, it depends, and you need a lot to handle as i'll tell you why.
 
-Refresh tokens enhance user experience by keeping users logged in without requiring them to enter credentials repeatedly. They also help maintain app security by ensuring access tokens aren’t valid indefinitely.
+Refresh tokens enhance the user experience by keeping users logged in without requiring them to enter their credentials repeatedly. They also help maintain app security by ensuring access tokens aren’t valid indefinitely.
 
-However, refresh tokens come with significant risks. If an attacker obtains a refresh token, they can request new access tokens and effectively take over the account.
+However, refresh tokens come with significant risks. If an attacker obtains the user's refresh token, they can request a new access token and take over the account.
 
 For critical apps (e.g., payment systems), requiring users to log in repeatedly might be a safer approach. but if you want a better UX, you will need to handle the associated security concerns.
 
