@@ -26,7 +26,7 @@ How it works technically, is you will have a separate endpoint `/refresh-token` 
 Here is a pseudo code, to show you how you can handle it
 
 ```js
-http.intercetors.response((resp) => {
+http.interceptors.response((resp) => {
   const rt = getRefreshToken();
   // if a 401 (unauthorized) code is returned and the user has a refresh token
   // go ahead and request a new access token and retry the request
