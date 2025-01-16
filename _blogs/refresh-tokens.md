@@ -13,7 +13,7 @@ Recently, while working on a project at my company, I was tasked with implementi
 - Luckily, there are a few things you can do to make it secure, like **Refresh token rotation**, **Safe storage**, **Rate limiting**, **Tie it to user context**
 
 ## What is a refresh token ?
-It's simply a token that's used to obtain a new access token, and it should always have a lifetime greater then the access token.
+It's simply a token that's used to obtain a new access token, and it should always have a longer life time then the access token.
 
 ## How it works ?
 ![How refresh tokens works](/blog/refresh-token-how-it-works.png)
