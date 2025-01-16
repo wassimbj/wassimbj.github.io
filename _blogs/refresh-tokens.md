@@ -23,7 +23,7 @@ It's simply a token that's used to obtain a new access token, and it always have
 
 How it works technically, is you will have a separate endpoint `/refresh-token` where you will send the refresh token and get a new access token, then **retry** the request that the user tried in the first place.
 
-Here is a pseudo code, to show you how you can probably handle it
+Here is a pseudo code, to show you how you can handle it
 
 ```js
 http.intercetors.response((resp) => {
