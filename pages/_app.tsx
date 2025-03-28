@@ -4,6 +4,7 @@ import { Source_Code_Pro } from "next/font/google";
 const sourceCodeProFont = Source_Code_Pro({ subsets: ["latin"] });
 import NProgress from "nprogress";
 import { useEffect } from "react";
+import Script from "next/script";
 
 NProgress.configure({
   showSpinner: false,
@@ -29,6 +30,7 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <main className={sourceCodeProFont.className}>
       <Component {...pageProps} />
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
     </main>
   );
 }
