@@ -150,7 +150,7 @@ You can find a [code example](https://platform.openai.com/docs/guides/function-c
 
 MCP (Model Context Protocol) is simply **a standard that defines how to build and interact with AI Agents**.
 
-![MCP](/blog/mcp.png)
+![MCP](/blog/mcp-1.png)
 
 The **[client](https://modelcontextprotocol.io/quickstart/client)** and the **[MCP server](https://modelcontextprotocol.io/quickstart/server)** connect using a transport layer, which can either be **HTTP SSE** if the server is hosted on the internet or **STDIO** if it's on your local machine.
 
