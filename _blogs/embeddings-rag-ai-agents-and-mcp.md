@@ -148,7 +148,7 @@ You can find a [code example](https://platform.openai.com/docs/guides/function-c
 
 ## MCP
 
-MCP (Model Context Protocol) is simply **a standard that defines how to build and interact with AI Agents**. Calling one or three tools in an AI Agent is fine, but imagine if you have 10+ tools interacting with different databases and possibly calling shared tools too.
+MCP (Model Context Protocol) is simply **a standard that defines how to build and interact with AI Agents**.
 
 ![MCP](/blog/mcp.png)
 
