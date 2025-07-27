@@ -272,7 +272,7 @@ I created a file called `ar.syn` with this content
 
 This is telling postgres to lexmize both words to "المدينة".
 
-After copying the file to the `tsearch` directory as we did before with hunspell dictionary, we create the synonym dictionary to use this file, and change the configuration to use the synonyn dictionary
+After copying the file to the `tsearch` directory as we did before with hunspell dictionary, we create the synonym dictionary to use this file, and change the configuration to use the synonym dictionary
 
 ```sql
 CREATE TEXT SEARCH DICTIONARY arabic_syn (
@@ -287,7 +287,7 @@ ALTER TEXT SEARCH CONFIGURATION arabic
     WITH arabic_syn, arabic_hunspell;
 ```
 
-Now as you can see in this pic, postgres now is lexemizing the words to it's synonym:
+Postgres now is lexemizing the words to their synonym we defined in the file:
 ![Synonym example](/blog/syn-dictionary-example.png)
 
 and this is an example of the query results in action:
@@ -322,6 +322,24 @@ Now you can just use that column directly when searching
 SELECT * FROM my_table WHERE content_vector @@ to_tsquery('arabic', 'طيبة');
 ```
 
+## FTS: Ranking
+
+> Ranking attempts to measure how relevant documents are to a particular query, so that when there are many matches the most relevant ones can be shown first - postgres.org
+
+There are 2 ranking functions in postgres
+
+1. `ts_rank()`: ranks results based on the on the frequency of their matching lexemes
+1. `ts_rank_cd()`: computes the "[cover density](https://archives.iw3c2.org/www2002/CDROM/refereed/643/node7.html)" ranking
+
+```sql
+SELECT
+   name,
+   ts_rank_cd(to_tsvector('arabic', name), to_tsquery('arabic', 'text')) rank
+FROM documents
+WHERE to_tsvector('arabic', name) @@ to_tsquery('arabic', 'text')
+ORDER BY rank DESC
+```
+
 ## Final review
 
-Full text search is a powerful technique that enhances query results and the experience of your users, but as we saw some languages like arabic support is very poor because the lack of good dictionary files.
+Full text search is a powerful technique that enhances query results and the experience of your users, but as we saw some languages like arabic support is still very limited due to the nature of the language, but if you are planning to use it for other languages, you will get a super nice results especially when mix it with the synonym dictionary.
