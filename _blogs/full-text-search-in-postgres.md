@@ -342,4 +342,4 @@ ORDER BY rank DESC
 
 ## Final review
 
-Full text search is a powerful technique that enhances query results and the experience of your users, but as we saw some languages like arabic support is still very limited due to the nature of the language, but if you are planning to use it for other languages, you will get a super nice results especially when mix it with the synonym dictionary.
+Full text search is a powerful technique that enhances query results and the experience of your users, but as we saw some languages like arabic support is still very limited due to the nature of the language, but if you are planning to use it for other languages, you will get a super nice results especially when you mix it with the synonym dictionary.
