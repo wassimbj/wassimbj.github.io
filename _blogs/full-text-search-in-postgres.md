@@ -15,7 +15,7 @@ The difference between LIKE and ILIKE is case sensitivity: LIKE is case-sensitiv
 So searching with `LIKE 'Apple%'` will only match `Apple` or `Apples`,
 whereas `ILIKE 'Apple%'` will match all case variations like `apples`, `APPLE`, etc.
 
-But arabic does not have letters, so it has no effect.
+But arabic does not have cases, so it has no effect.
 
 However, it can be very slow when you have a large dataset.
 
