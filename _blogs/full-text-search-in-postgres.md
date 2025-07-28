@@ -168,18 +168,17 @@ You can try the snowball stemming in different languages in their [official webs
 
 For implementing the arabic full text search, we will use the hunspell format files, as ispell files does not exist for the arabic language.
 
-You can download them from ![here](https://github.com/JetBrains/hunspell-dictionaries/tree/master/ar)
+You can download them from [here](https://github.com/JetBrains/hunspell-dictionaries/tree/master/ar)
 
 you just need the **ar.dic** and **ar.aff**
 
 Im running postgres container using docker, so if you want to follow me, you can run
 
-**Ispell expects the files to be .affix and .dict**
-
 ```bash
 docker cp ./ar.aff ftsdb:/usr/share/postgresql/16/tsearch_data/ar.affix
 docker cp ./ar.dic ftsdb:/usr/share/postgresql/16/tsearch_data/ar.dict
 ```
+**Ispell expects the files to be .affix and .dict**
 
 `ftsdb` is the name of container, so you are copying from your machine to the container
 
@@ -187,7 +186,7 @@ After that we need to copy these files to `/usr/share/postgresql/16/tsearch_data
 
 Im using Postgres V16 so make sure to run `pg_config --sharedir` to know where is your dir if you are not sure which version.
 
-If you try to `ls usr/share/postgresql/16/tsearch_data` you will find files and templates for different languages, you can actually copy some of them and build your own if you are not satisified, but it might take you some time.
+If you try to `ls usr/share/postgresql/16/tsearch_data` you will find files and templates for different languages, you can actually copy some of them and build your own.
 
 example of a synonym dictionary file template
 
@@ -204,13 +203,7 @@ as i mentioned before, here searching for "postgres", "postgresql" or "postgre" 
 
 Let's go back.
 
-After you copied the files to the docker container and copied it to the tsearch_data folder with
-
-```bash
-cp ar.affix ar.dict
-```
-
-Now let's configure it using ower new custom files
+Now after copying the files, we will create a custom dictionary to use that files
 
 ```sql
 CREATE TEXT SEARCH DICTIONARY arabic_hunspell (
@@ -235,14 +228,14 @@ ALTER TEXT SEARCH CONFIGURATION arabic
 > [!NOTE]
 > I commented the StopWords, because we don't have a file for it, but as an exercice you can copy a template from the tsearch_data folder and put arabic stop words in it, reconfigure it to use your custom file.
 
-What we did above, is create a custom ispell dictionary, then create a basic settings copied from the english fts settings, and then overwrite that configurations to make it work for our custom dictionary.
+What we did above, is create a custom ispell dictionary, then create a basic settings copied from the english fts settings, and finally overwrite that configurations to make it work for our custom dictionary.
 
-Now if you want to test the the new configurations that are using the custom files, we can run
+Now if we want to test the the new configurations that are using the custom files, we can run
 
 ```sql
 fts=# SELECT ts_debug('arabic', 'فجوات');
 -[ RECORD 1 ]-----------------------------------------------------------------------------------------------------------------------------
-ts_debug | (word,"Word, all letters",فجوات,"{arabic_hunspell,simple}",arabic_hunspell,"{جو,فجوة,جوة,جو,فجوة,جوة,جو,فجوة,جوة,جو,فجوة,جوة}")
+ts_debug | (word,"Word, all letters",فجوات,"{arabic_hunspell}",arabic_hunspell,"{جو,فجوة,جوة,جو,فجوة,جوة,جو,فجوة,جوة,جو,فجوة,جوة}")
 ```
 
 As you can see it's using our `arabic_hunspell` and the output is diffrent for the word _فجوات_
