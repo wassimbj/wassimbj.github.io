@@ -12,8 +12,10 @@ In this blog, I'll explain, using examples, how to implement full text search in
 Pattern matching is not considered full text search (FTS), but it can be sufficient for simple projects where search is not a critical feature.
 
 The difference between LIKE and ILIKE is case sensitivity: LIKE is case-sensitive, while ILIKE is case-insensitive.
-So searching with LIKE 'Apple%' will only match Apple or Apples,
-whereas ILIKE 'Apple%' will match all case variations like apples, APPLE, etc.
+So searching with `LIKE 'Apple%'` will only match `Apple` or `Apples`,
+whereas `ILIKE 'Apple%'` will match all case variations like `apples`, `APPLE`, etc.
+
+But arabic does not have letters, so it has no effect.
 
 However, it can be very slow when you have a large dataset.
 
