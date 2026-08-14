@@ -1,5 +1,5 @@
 #!/bin/bash
-# to run this script run `yarn new:blog "<title>"`
+# to run this script run `yarn blog "<title>"`
 
 blog_title=$*
 echo "$blog_title";
