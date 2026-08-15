@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           <meta name="author" content="Wassim Ben Jdida" />
         </Head>
 
-        <body className="bg-darkGreen">
+        <body className="bg-warmPaper">
           <Main />
           <NextScript />
         </body>

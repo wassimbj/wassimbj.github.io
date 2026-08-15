@@ -55,24 +55,24 @@ export default function Post({ post }: Props) {
         <meta name="keywords" content={post.keywords} />
       </Head>
       <Navbar />
-      <div className="max-w-3xl py-10 mx-auto p-2 mt-5">
+      <div className="mx-auto mt-5 max-w-3xl p-2 py-10">
         <Link
           href="/blog"
-          className="underline text-sm p-2 text-gray-400 hover:text-gray-300"
+          className="p-2 text-sm text-slate-500 underline hover:text-[#1d7d68]"
         >
           ← Back
         </Link>
-        <div className="border-b border-lightGreen/25 pb-3 mb-4">
-          <span className="font-bold text-3xl text-lightGreen block">
+        <div className="mb-4 border-b border-[#cfece5] pb-4">
+          <span className="block text-3xl font-bold text-[#1a3a39]">
             ↬ {post.title}
           </span>
-          <span className="inline-block text-sm bg-white/5 px-3 mt-2 rounded-md">
+          <span className="mt-3 inline-block rounded-full bg-[#edf9f5] px-3 py-1 text-sm text-slate-700">
             {dayjs(post.date).format("DD MMM YYYY")}
           </span>
         </div>
         <div
           id="blog-content"
-          className="prose prose-strong:font-bold prose-hr:border-white/10 prose-li:text-base prose-code:!text-base prose-code:!bg-transparent prose-code:inline-block prose-code:rounded-md prose-p:text-lg prose-a:text-lightGreen prose-li:text-gray-400 prose-headings:text-gray-400 hover:prose-a:text-lightGreen/80 prose-strong:text-gray-400 prose-p:text-gray-400"
+          className="prose prose-lg prose-strong:font-bold prose-hr:border-[#d9ece7] prose-li:text-base prose-code:!text-base prose-code:!bg-transparent prose-code:inline-block prose-code:rounded-md prose-p:text-lg prose-a:text-[#2fa88a] prose-li:text-slate-700 prose-headings:text-slate-900 hover:prose-a:text-[#1d7d68] prose-strong:text-slate-800 prose-p:text-slate-700"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </div>

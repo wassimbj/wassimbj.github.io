@@ -1,10 +1,11 @@
 import "../styles/globals.css";
 import "nprogress/nprogress.css";
-import { Source_Code_Pro } from "next/font/google";
-const sourceCodeProFont = Source_Code_Pro({ subsets: ["latin"] });
+import { Inter } from "next/font/google";
 import NProgress from "nprogress";
 import { useEffect } from "react";
 import Script from "next/script";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 NProgress.configure({
   showSpinner: false,
@@ -28,7 +29,7 @@ function MyApp({ Component, pageProps, router }) {
   }, []);
 
   return (
-    <main className={sourceCodeProFont.className}>
+    <main className={`${inter.variable} min-h-screen bg-warmPaper text-ink`}>
       <Component {...pageProps} />
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
     </main>

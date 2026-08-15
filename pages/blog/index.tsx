@@ -8,29 +8,29 @@ export default function BlogIndex({ allPosts }: { allPosts: Array<any> }) {
   return (
     <>
       <Navbar />
-      <div className="max-w-2xl py-5 mx-auto p-2">
+      <div className="mx-auto max-w-2xl p-2 py-5">
         <div className="mt-5">
-          <span className="bg-lightGreen inline-block mb-1 text-3xl font-semibold text-darkGreen">
+          <span className="mb-1 inline-block rounded-full bg-[#dff5ee] px-3 py-1 text-3xl font-semibold text-[#1a3a39]">
             /Blog
           </span>
-          <p className="text-sm font-light">
+          <p className="text-sm font-light text-slate-600">
             Learning and sharing my experience along the way. {"ヾ(＠⌒ー⌒＠)ノ"}
           </p>
         </div>
 
-        <div className="p-2 mt-10">
-          <span className="border-b border-white/5 block"></span>
+        <div className="mt-10 p-2">
+          <span className="block border-b border-[#d9ece7]"></span>
           {allPosts.map((post, i) => (
             <Link
               href={`/blog/${post.slug}`}
               key={i}
               passHref
-              className="px-2 group block py-3 border-b border-white/10"
+              className="group block border-b border-[#e8f3ee] px-2 py-3"
             >
-              <span className="font-semibold pr-5 group-active:text-lightGreen/80 group-hover:text-lightGreen transition-all underline block">
+              <span className="block pr-5 font-semibold text-slate-800 underline decoration-[#bfe7d9] underline-offset-4 transition-all group-hover:text-[#1d7d68] group-active:text-[#1d7d68]">
                 {post.title}
               </span>
-              <span className="font-light text-xs whitespace-nowrap">
+              <span className="whitespace-nowrap text-xs font-light text-slate-500">
                 {dayjs(post.date).format("DD MMM YYYY")}
               </span>
             </Link>

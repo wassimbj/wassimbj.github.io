@@ -8,7 +8,6 @@ import WorkCard from "../components/WorkCard";
 import works from "../meta/works.json";
 
 export default function Home() {
-  const myEmail = "wassimbenjdida@gmail.com";
   return (
     <div>
       <Head>
@@ -26,33 +25,33 @@ export default function Home() {
 
       <main className="mx-auto max-w-3xl px-2">
         {/* ----- About ------ */}
-        <section id="about" className="md:mt-10 mt-5">
-          <div className="flex items-center flex-wrap">
+        <section id="about" className="mt-5 md:mt-10">
+          <div className="flex flex-wrap items-center">
             <Image
               src="/me.png"
               title="That's me :D"
               width={170}
               height={170}
-              className="object-cover mr-3 block"
+              className="mr-3 block rounded-full border-4 border-[#dff5ee] bg-white object-cover"
               alt="My pic"
             />
             <div>
-              <h1 className="text-lightGreen lg:text-5xl md:text-4xl text-3xl font-black">
+              <h1 className="text-3xl font-black text-[#1a3a39] md:text-4xl lg:text-5xl">
                 Wassim Ben Jdida
               </h1>
-              <span className="block lg:text-3xl md:text-2xl text-xl font-semibold text-gray-200">
+              <span className="mt-1 block text-xl font-semibold text-slate-600 md:text-2xl lg:text-3xl">
                 Software Engineer
               </span>
             </div>
           </div>
-          <p className="bio max-w-2xl mt-7">
+          <p className="bio mt-7 max-w-2xl text-slate-700">
             Hey, I'm wassim, I love building software that solves real world
             problems, I also enjoy building helpful tools and simple fun games.
             I'm currently working as a software engineer at{" "}
             <a
               href="https://misraj.sa/"
               rel="noreferrer"
-              className="underline text-lightGreen hover:bg-lightGreen/20"
+              className="text-[#1d7d68] underline decoration-[#9adcc8] underline-offset-4 hover:bg-[#eafaf5]"
               target="_blank"
             >
               Misraj↗
@@ -62,8 +61,8 @@ export default function Home() {
             mind or just want to say hi, feel free to reach out to me.
           </p>
 
-          <div className="flex items-center space-x-5 mt-5">
-            <SocialMediaLinks myEmail={myEmail} />
+          <div className="mt-5 flex items-center">
+            <SocialMediaLinks />
           </div>
         </section>
         {/* ----- About ------ */}
@@ -71,7 +70,7 @@ export default function Home() {
         {/* ----- Works ------ */}
         <section id="work" className="mt-32">
           <div className="mb-5">
-            <span className="sm:text-3xl text-xl font-semibold bg-lightGreen text-darkGreen">
+            <span className="rounded-full bg-[#dff5ee] px-3 py-1 text-xl font-semibold text-[#1a3a39] sm:text-3xl">
               /Things i made
             </span>
           </div>

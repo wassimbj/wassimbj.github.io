@@ -3,8 +3,36 @@
 @tailwind utilities;
 @import "rehype-callouts/theme/github";
 
-body {
-  @apply text-gray-300 relative overflow-x-hidden;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply relative overflow-x-hidden bg-warmPaper text-ink antialiased;
+    font-family: var(--font-inter), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.8;
+    background-image: radial-gradient(circle at top, rgba(47, 168, 138, 0.08), transparent 32%);
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-slate-900;
+  }
+
+  p,
+  li,
+  blockquote {
+    @apply text-slate-700;
+  }
 }
 
 button:active {
@@ -21,7 +49,20 @@ a {
 }
 
 .prose {
-  @apply !max-w-full;
+  @apply !max-w-full text-slate-700;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-slate-900;
+}
+
+.prose a {
+  @apply text-[#2fa88a] no-underline hover:text-[#1d7d68];
 }
 
 #nprogress .bar {
@@ -29,5 +70,5 @@ a {
 }
 
 #blog-content code:not(pre code) {
-  @apply text-lightGreen bg-lightGreen/10;
+  @apply rounded-md bg-[#eafaf5] px-1 py-0.5 text-[#1d7d68];
 }
