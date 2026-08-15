@@ -112,12 +112,19 @@ Type   | table
 Owner  | root
 ```
 
+After you ran a lot of commands, you need to clear the screen, you can run:
+
+```bash
+\! clear
+```
+
 At this point your mission is to learn more about the database CLI for example psql, it's really easy, you won't need more than what I've mentioned above, to view tables and format results.
 
 I almost forgot one thing, is that you can do a single command to run a query like this
 ```bash
 docker exec -it mydb_container psql postgres://root:123@localhost:5432/mydb -c "SELECT * FROM users;"
 ```
+
 
 ## Finally
 
